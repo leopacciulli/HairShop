@@ -21,4 +21,13 @@
 
 ---
 
+### :hammer_and_wrench: Desenvolvimento do front-end:
+- O desenvolvimento do front-end foi inicializado utilizando ReactJS junto ao TypeScript incluindo também ferramentas de auxilio como ESlint e Prettier, utilizando styled-components para estilização dos componentes. Com validação de formulário nas páginas de Login e Cadastro utilizando a lib Yup.
+
+<h3>Funcionalidades do sistema até o momento:</h3>
+<ul>
+  <li>Layout da tela de Login</li>
+  <li>Layout da tela de Cadastro</li>
+</ul>
+
 Autor: [Leonardo Pacciulli](https://www.linkedin.com/in/leonardo-pacciulli-a4b86a92/)
