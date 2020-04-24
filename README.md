@@ -33,4 +33,14 @@
   <li>Realizar login na aplicação</li>
 </ul>
 
+--- 
+
+### :hammer_and_wrench: Desenvolvimento mobile:
+- O desenvolvimento mobile inicializado utilizando React Native junto ao TypeScript incluindo também ferramentas de auxilio como ESlint e Prettier, utilizando styled-components para estilização dos componentes.
+
+<h3>Funcionalidades do sistema até o momento:</h3>
+<ul>
+  <li>Layout da tela de Login</li>
+</ul>
+
 Autor: [Leonardo Pacciulli](https://www.linkedin.com/in/leonardo-pacciulli-a4b86a92/)
