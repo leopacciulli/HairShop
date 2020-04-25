@@ -23,7 +23,7 @@
 
 ### :hammer_and_wrench: Desenvolvimento do front-end:
 - O desenvolvimento do front-end foi inicializado utilizando ReactJS junto ao TypeScript incluindo também ferramentas de auxilio como ESlint e Prettier, utilizando styled-components para estilização dos componentes. Com validação de formulário nas páginas de Login e Cadastro utilizando a lib Yup.
-- Foi realizado a conexão com o back-end utilizando o axios via REST API's, se conectando com a api de login e cadastro podendo ser realizada no front-end, com validação restringindo o acesso às páginas logadas sem que um usuário esteja autenticado. 
+- Foi realizado a conexão com o back-end utilizando o axios via REST API's, se conectando com a api de login utilizando context api e conectando com api de cadastro, também feita validação restringindo o acesso às páginas logadas sem que um usuário esteja autenticado. 
 
 <h3>Funcionalidades do sistema até o momento:</h3>
 <ul>
@@ -37,10 +37,14 @@
 
 ### :hammer_and_wrench: Desenvolvimento mobile:
 - O desenvolvimento mobile inicializado utilizando React Native junto ao TypeScript incluindo também ferramentas de auxilio como ESlint e Prettier, utilizando styled-components para estilização dos componentes.
+- Foi realizado a conexão com o back-end utilizando o axios via REST API's, se conectando com a api de login utilizando context api e conectando com api de cadastro.
 
 <h3>Funcionalidades do sistema até o momento:</h3>
 <ul>
+  <li>Layout da tela de Cadastro</li>
   <li>Layout da tela de Login</li>
+  <li>Realizar cadastro na aplicação</li>
+  <li>Realizar login na aplicação</li>
 </ul>
 
 Autor: [Leonardo Pacciulli](https://www.linkedin.com/in/leonardo-pacciulli-a4b86a92/)
