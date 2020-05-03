@@ -1,50 +1,173 @@
 <h1 align="center">
-  <img alt="GoStack" src="./assets/gostack.png" />
+  <img src="./frontend/src/assets/logo.svg" width="250px">
 </h1>
 
-<h3 align="center">:rocket: :construction: Projeto em Construção junto ao Bootcamp 2020 :construction: :rocket:</h3>
+<h3 align="center">
+🚧 In Development 🚧 <br>
+Project being built along with Rocketseat's GoStack - <a href="https://rocketseat.com.br/">RocketSeat</a>
+</h3>
 
-<h1 align="center">GoBarber</h1>
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/leopacciulli/Bootcamp-GoBarber?color=yellow">
+  
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/leopacciulli/Bootcamp-GoBarber?color=yellow">
 
-### :hammer_and_wrench: Desenvolvimento do back-end:
-- O back-end está sendo desenvolvido com Node.js com Express junto ao TypeScript incluindo ferramentes como ESLint e Prettier, conectando ao banco de dados utilizando REST API's, utilizando Docker na criação de containers incluindo o uso do banco de dados com o TypeORM, utilizando Multer para upload de imagens e Json Web Token para autenticação e controle de acesso do usuário.
+  <img alt="GitHub repo size in bytes" src="https://img.shields.io/github/repo-size/leopacciulli/Bootcamp-GoBarber?color=yellow">
+  
+  <img alt="Made by Rocketseat" src="https://img.shields.io/github/license/leopacciulli/Bootcamp-GoBarber">
 
-- Utilizando DBeaver para consulta de dados e Insomnia para testes de API's
+  <br>
 
-<h3>Funcionalidades do sistema até o momento:</h3>
-<ul>
-  <li>Criação de um usuário na aplicação podendo realizar o upload da sua foto de perfil</li>
-  <li>Criação da sessão do usuário podendo realizar um login</li>
-  <li>Criação de agendamentos realizada por um "barbeiro/cabeleireiro"</li>
-  <li>Listagem dos agendamentos realizados para o usuário com a sessão ativa</li>
-</ul>
+  <img alt="Node.js version" src="https://img.shields.io/badge/Node.js-v12.16.1-689f63?style=flat&logoColor=689f63&logo=node.js">
+
+  <img alt="TypeScript version" src="https://img.shields.io/badge/TypeScript-v3.8.3-007acc?style=flat&logoColor=007acc&logo=typescript">
+
+  <img alt="React.js version" src="https://img.shields.io/badge/React.js-v16.13.1-60dafb?style=flat&logoColor=60dafb&logo=react">
+
+  <img alt="React Native version" src="https://img.shields.io/badge/React_Native-v0.62.2-7159c1?style=flat&logoColor=60dafb&logo=react">
+</p>
+
+<br>
+
+### 📝 About the project
+Hair Shop is an application for hairdressing salon, where hairdressers can register on the web application and can insert their employees and their schedules. Customers can register on the mobile application, being able to find employees who work on site and schedule the day and time to cut their hair.
+
+<div align="center">
+  <img src="./frontend/src/assets/hairweb.gif" width="550px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="./mobile/src/assets/hairmob.gif" width="210px" />
+</div>
+
+<br>
+
+## 🤖 Back-End
+The Back-End was developed with Node.js and TypeScript. For standardization and organization of the code, ESLint, Prettier and EditorConfig were used. The connection to the PostgreSQL database was made with DBeaver and Docker to create containers with TypeORM. For authentication and user access control was used JWT (Json Web Token). To upload images was used Multer.
+
+### 🛠 Technologies
+- **[Node.js](https://nodejs.org/en/)**
+- **[TypeScript](https://www.typescriptlang.org/)**
+- *[Express](https://expressjs.com/pt-br/)*
+- *[Docker](https://www.docker.com/)*
+- *[PostgreSQL](https://www.postgresql.org/)*
+- *[DBeaver](https://dbeaver.io/)*
+- *[TypeORM](https://typeorm.io/#/)*
+- *[JWT](https://jwt.io/)*
+
+### ⚙️ Finished features
+- Register in the application
+- Logon in the application
+- Creation of a user in the application being able to upload his profile photo
+- Creation of the user session being able to perform a login
+- Scheduling created by a "barber / hairdresser"
+- List of schedules made for the user with the active session
+
+<br>
+
+## 🖥 Front-End
+The Front-End was developed with React.js and TypeScript. For standardization and organization of the code was used ESLint, Prettier and EditorConfig. The styling was done with Styled-Components. The navigation screens were made with React Router DOM. The validation of login and registration was done with Yup. To connect with the Back-End was used Axios (REST Api).
+
+### 🛠 Technologies
+- **[React.js](https://reactjs.org/)**
+- *[React Router DOM](https://reacttraining.com/react-router/web/guides/quick-start)*
+- *[Styled-Components](https://styled-components.com/)*
+- *[React Icons](https://react-icons.netlify.com/#/)*
+- *[Polished](https://polished.js.org/)*
+- *[Axios](https://nodemon.io/)*
+
+### ⚙️ Finished features
+- Registration screen layout
+- Logon screen layout
+- Register in the application
+- Logon in the application
+
+<br>
+
+## 📱 Mobile
+The Mobile was developed with React Native and TypeScript. For standardization and organization of the code was used ESLint, Prettier and EditorConfig. The styling was done with Styled-Components. The navigation screens were made with React Router DOM. The validation of login and registration was done with Yup. To connect with the Back-End was used Axios (REST Api).
+
+### 🛠 Technologies
+- **[React Native](https://reactnative.dev/)**
+- *[React Navigation](https://reactnavigation.org/)*
+- *[Styled-Components](https://styled-components.com/)*
+- *[React-Native-Vector-Icons](https://github.com/oblador/react-native-vector-icons)*
+
+### ⚙️ Finished features
+- Registration screen layout
+- Logon screen layout
+- Register in the application
+- Logon in the application
+
+<br>
+
+## 🏁 Starting the project
+Clone the project: `git clone https://github.com/leopacciulli/Bootcamp-GoBarber.git`
+
+<br>
+
+🤖 To run the **Back-End**, you must first create a container in Docker and a PostgreSQL database in DBeaver. 
+<br>Then open the terminal and run the following commands:
+
+````zsh
+# to enter the Back-End folder
+$ cd backend
+
+# to download the dependencies
+$ yarn
+
+# to start the application on port 3333
+$ yarn dev:server
+````
+<br>
+
+🖥 To run the **Front-End**, in another terminal tab, execute the following commands:
+
+````zsh
+# to enter the Front-End folder
+$ cd frontend
+
+# to download the dependencies
+$ yarn
+
+# to start the application on port 3000
+$ yarn start
+````
+Now access `http://localhost:3000/`
+
+<br>
+
+📱 To run **Mobile**, you need an Android or iOS simulator (Mac only) running on your computer or connect your physical smartphone to USB. To learn how to install / configure, follow the [RocketSeat tutorial](https://react-native.rocketseat.dev/).
+<br>Now, on another tab of the terminal, run the following commands:
+
+````zsh
+# to enter the Mobile folder
+$ cd mobile
+
+# to download the dependencies
+$ yarn
+
+# for Android:
+# first open the Android emulator
+# to start the app on the simulator or on the Android physical smartphone connected to the USB device
+$ yarn android
+
+# for iOS:
+# to launch the app on the simulator or on the physical iOS smartphone connected to the USB device (only using Mac)
+$ yarn ios
+````
 
 ---
 
-### :hammer_and_wrench: Desenvolvimento do front-end:
-- O desenvolvimento do front-end foi inicializado utilizando ReactJS junto ao TypeScript incluindo também ferramentas de auxilio como ESlint e Prettier, utilizando styled-components para estilização dos componentes. Com validação de formulário nas páginas de Login e Cadastro utilizando a lib Yup.
-- Foi realizado a conexão com o back-end utilizando o axios via REST API's, se conectando com a api de login utilizando context api e conectando com api de cadastro, também feita validação restringindo o acesso às páginas logadas sem que um usuário esteja autenticado. 
+<h3 align="center">
+  Made with love by 💙 Leonardo Pacciulli
+</h3>
 
-<h3>Funcionalidades do sistema até o momento:</h3>
-<ul>
-  <li>Layout da tela de Cadastro</li>
-  <li>Layout da tela de Login</li>
-  <li>Realizar cadastro na aplicação</li>
-  <li>Realizar login na aplicação</li>
-</ul>
-
---- 
-
-### :hammer_and_wrench: Desenvolvimento mobile:
-- O desenvolvimento mobile inicializado utilizando React Native junto ao TypeScript incluindo também ferramentas de auxilio como ESlint e Prettier, utilizando styled-components para estilização dos componentes.
-- Foi realizado a conexão com o back-end utilizando o axios via REST API's, se conectando com a api de login utilizando context api e conectando com api de cadastro.
-
-<h3>Funcionalidades do sistema até o momento:</h3>
-<ul>
-  <li>Layout da tela de Cadastro</li>
-  <li>Layout da tela de Login</li>
-  <li>Realizar cadastro na aplicação</li>
-  <li>Realizar login na aplicação</li>
-</ul>
-
-Autor: [Leonardo Pacciulli](https://www.linkedin.com/in/leonardo-pacciulli-a4b86a92/)
+<p align="center">
+  <a href="https://www.linkedin.com/in/leonardo-pacciulli">
+    <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-/in/leonardopacciulli-0e76a8?style=flat&logoColor=white&logo=linkedin">
+  </a>
+  <a href="https://www.facebook.com/paculli">
+    <img alt="Facebook" src="https://img.shields.io/badge/Facebook-/LeonardoPacciulli-1778F2?style=flat&logoColor=white&logo=facebook">
+  </a>
+  <a href="https://www.instagram.com/leopacciulli/">
+    <img alt="Instagram" src="https://img.shields.io/badge/Instagram-@leopacciulli-833AB4?style=flat&logoColor=white&logo=instagram">
+  </a>
+</p>
