@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { shade } from 'polished';
-import backgroundImg from '../../assets/sign-up-background.png';
+import backgroundImg from '../../assets/sign-up-background.jpg';
 
 export const Container = styled.div`
   height: 100vh;
@@ -59,7 +59,7 @@ export const AnimationContainer = styled.div`
   }
 
   > a {
-    color: #ff9000;
+    color: #dedede;
     margin-top: 24px;
     text-decoration: none;
     transition: color 0.2s;
@@ -71,7 +71,7 @@ export const AnimationContainer = styled.div`
     }
 
     &:hover {
-      color: ${shade(0.2, '#ff9000')};
+      color: ${shade(0.2, '#dedede')};
     }
   }
 `;
@@ -80,4 +80,5 @@ export const Background = styled.div`
   flex: 1;
   background: url(${backgroundImg}) no-repeat center;
   background-size: cover;
+  opacity: 0.7;
 `;
