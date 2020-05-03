@@ -44,8 +44,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'appgobarber' do
-  # Pods for appgobarber
+target 'apphairshop' do
+  # Pods for apphairshop
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -77,7 +77,7 @@ target 'appgobarber' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'appgobarberTests' do
+  target 'apphairshopTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -94,10 +94,10 @@ target 'appgobarber' do
   end
 end
 
-target 'appgobarber-tvOS' do
-  # Pods for appgobarber-tvOS
+target 'apphairshop-tvOS' do
+  # Pods for apphairshop-tvOS
 
-  target 'appgobarber-tvOSTests' do
+  target 'apphairshop-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

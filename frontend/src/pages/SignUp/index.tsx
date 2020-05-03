@@ -49,7 +49,7 @@ const SignUp: React.FC = () => {
         addToast({
           type: 'success',
           title: 'Cadastro realizado!',
-          description: 'Você ja pode fazer seu logon no GoBarber',
+          description: 'Você ja pode fazer seu logon no Hair Shop',
         });
 
         history.push('/');
@@ -75,7 +75,7 @@ const SignUp: React.FC = () => {
       <Background />
       <Content>
         <AnimationContainer>
-          <img src={logo} alt="GoBarber" />
+          <img src={logo} alt="HairShop" />
 
           <Form ref={formRef} onSubmit={handleSubmit}>
             <h1>Faça seu cadastro</h1>

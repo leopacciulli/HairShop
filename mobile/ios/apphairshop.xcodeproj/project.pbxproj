@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* appgobarberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* appgobarberTests.m */; };
+		00E356F31AD99517003FC87E /* apphairshopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* apphairshopTests.m */; };
 		064F8912EA3D4AD792BA5A61 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ACD6E2B48D542F1A994E83D /* Roboto-Regular.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		297C47861174C951BE8ADEF3 /* libPods-appgobarber-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB1FA62EDC9864A0395E0A7 /* libPods-appgobarber-tvOS.a */; };
+		297C47861174C951BE8ADEF3 /* libPods-apphairshop-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB1FA62EDC9864A0395E0A7 /* libPods-apphairshop-tvOS.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* appgobarberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* appgobarberTests.m */; };
+		2DCD954D1E0B4F2C00145EB5 /* apphairshopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* apphairshopTests.m */; };
 		38ADFD38882A4B79AFFC9951 /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB14567CAACB479BA2AF98F8 /* RobotoSlab-Regular.ttf */; };
-		5F7FE7D07F5E43317567B153 /* libPods-appgobarber-appgobarberTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77100080C3AFBAFBAF848328 /* libPods-appgobarber-appgobarberTests.a */; };
+		5F7FE7D07F5E43317567B153 /* libPods-apphairshop-apphairshopTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77100080C3AFBAFBAF848328 /* libPods-apphairshop-apphairshopTests.a */; };
 		A449461D956147469B1B1366 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3401E1FB038346DDB494B462 /* Roboto-Medium.ttf */; };
-		AB4BCB256678752F68D75C35 /* libPods-appgobarber-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 798C8D577609C08FA0FA9001 /* libPods-appgobarber-tvOSTests.a */; };
-		ABD70A2A2489E00D2864B3DC /* libPods-appgobarber.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E70B0E947603373BF1FE1F75 /* libPods-appgobarber.a */; };
+		AB4BCB256678752F68D75C35 /* libPods-apphairshop-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 798C8D577609C08FA0FA9001 /* libPods-apphairshop-tvOSTests.a */; };
+		ABD70A2A2489E00D2864B3DC /* libPods-apphairshop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E70B0E947603373BF1FE1F75 /* libPods-apphairshop.a */; };
 		D207433180D0466AB743CDCB /* RobotoSlab-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92A7C2FCDE324A64A5DBCA4C /* RobotoSlab-Medium.ttf */; };
 /* End PBXBuildFile section */
 
@@ -32,49 +32,49 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = appgobarber;
+			remoteInfo = apphairshop;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "appgobarber-tvOS";
+			remoteInfo = "apphairshop-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* appgobarberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appgobarberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* apphairshopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = apphairshopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* appgobarberTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = appgobarberTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* appgobarber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appgobarber.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = appgobarber/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = appgobarber/AppDelegate.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* apphairshopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = apphairshopTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* apphairshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = apphairshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = apphairshop/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = apphairshop/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = appgobarber/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = appgobarber/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = appgobarber/main.m; sourceTree = "<group>"; };
-		1BF4BCB4AF5D673ED3074BCF /* Pods-appgobarber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appgobarber.release.xcconfig"; path = "Target Support Files/Pods-appgobarber/Pods-appgobarber.release.xcconfig"; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* appgobarber-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "appgobarber-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* appgobarber-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "appgobarber-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = apphairshop/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = apphairshop/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = apphairshop/main.m; sourceTree = "<group>"; };
+		1BF4BCB4AF5D673ED3074BCF /* Pods-apphairshop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apphairshop.release.xcconfig"; path = "Target Support Files/Pods-apphairshop/Pods-apphairshop.release.xcconfig"; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* apphairshop-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "apphairshop-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* apphairshop-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apphairshop-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3401E1FB038346DDB494B462 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
-		44E0519477E2E31E5FA6EEBC /* Pods-appgobarber-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appgobarber-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-appgobarber-tvOS/Pods-appgobarber-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		5EE6708FECAEC905F245F985 /* Pods-appgobarber-appgobarberTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appgobarber-appgobarberTests.release.xcconfig"; path = "Target Support Files/Pods-appgobarber-appgobarberTests/Pods-appgobarber-appgobarberTests.release.xcconfig"; sourceTree = "<group>"; };
-		77100080C3AFBAFBAF848328 /* libPods-appgobarber-appgobarberTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-appgobarber-appgobarberTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		798C8D577609C08FA0FA9001 /* libPods-appgobarber-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-appgobarber-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FFA0AC7F61021FECE3C4308 /* Pods-appgobarber-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appgobarber-tvOS.release.xcconfig"; path = "Target Support Files/Pods-appgobarber-tvOS/Pods-appgobarber-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		44E0519477E2E31E5FA6EEBC /* Pods-apphairshop-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apphairshop-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-apphairshop-tvOS/Pods-apphairshop-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		5EE6708FECAEC905F245F985 /* Pods-apphairshop-apphairshopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apphairshop-apphairshopTests.release.xcconfig"; path = "Target Support Files/Pods-apphairshop-apphairshopTests/Pods-apphairshop-apphairshopTests.release.xcconfig"; sourceTree = "<group>"; };
+		77100080C3AFBAFBAF848328 /* libPods-apphairshop-apphairshopTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-apphairshop-apphairshopTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		798C8D577609C08FA0FA9001 /* libPods-apphairshop-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-apphairshop-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FFA0AC7F61021FECE3C4308 /* Pods-apphairshop-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apphairshop-tvOS.release.xcconfig"; path = "Target Support Files/Pods-apphairshop-tvOS/Pods-apphairshop-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		8ACD6E2B48D542F1A994E83D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		913E3A478696115196B54835 /* Pods-appgobarber-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appgobarber-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-appgobarber-tvOSTests/Pods-appgobarber-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		913E3A478696115196B54835 /* Pods-apphairshop-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apphairshop-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-apphairshop-tvOSTests/Pods-apphairshop-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		92A7C2FCDE324A64A5DBCA4C /* RobotoSlab-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoSlab-Medium.ttf"; path = "../assets/fonts/RobotoSlab-Medium.ttf"; sourceTree = "<group>"; };
-		C6AB2FB071633EE4F92E41C2 /* Pods-appgobarber-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appgobarber-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-appgobarber-tvOSTests/Pods-appgobarber-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		C6AB2FB071633EE4F92E41C2 /* Pods-apphairshop-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apphairshop-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-apphairshop-tvOSTests/Pods-apphairshop-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		CB14567CAACB479BA2AF98F8 /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoSlab-Regular.ttf"; path = "../assets/fonts/RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
-		DBDEDEAE860F12647F00BCFE /* Pods-appgobarber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appgobarber.debug.xcconfig"; path = "Target Support Files/Pods-appgobarber/Pods-appgobarber.debug.xcconfig"; sourceTree = "<group>"; };
-		E70B0E947603373BF1FE1F75 /* libPods-appgobarber.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-appgobarber.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBDEDEAE860F12647F00BCFE /* Pods-apphairshop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apphairshop.debug.xcconfig"; path = "Target Support Files/Pods-apphairshop/Pods-apphairshop.debug.xcconfig"; sourceTree = "<group>"; };
+		E70B0E947603373BF1FE1F75 /* libPods-apphairshop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-apphairshop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		EEB1FA62EDC9864A0395E0A7 /* libPods-appgobarber-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-appgobarber-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F51EF76868428879193489FF /* Pods-appgobarber-appgobarberTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appgobarber-appgobarberTests.debug.xcconfig"; path = "Target Support Files/Pods-appgobarber-appgobarberTests/Pods-appgobarber-appgobarberTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EEB1FA62EDC9864A0395E0A7 /* libPods-apphairshop-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-apphairshop-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F51EF76868428879193489FF /* Pods-apphairshop-apphairshopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apphairshop-apphairshopTests.debug.xcconfig"; path = "Target Support Files/Pods-apphairshop-apphairshopTests/Pods-apphairshop-apphairshopTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F7FE7D07F5E43317567B153 /* libPods-appgobarber-appgobarberTests.a in Frameworks */,
+				5F7FE7D07F5E43317567B153 /* libPods-apphairshop-apphairshopTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABD70A2A2489E00D2864B3DC /* libPods-appgobarber.a in Frameworks */,
+				ABD70A2A2489E00D2864B3DC /* libPods-apphairshop.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				297C47861174C951BE8ADEF3 /* libPods-appgobarber-tvOS.a in Frameworks */,
+				297C47861174C951BE8ADEF3 /* libPods-apphairshop-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,20 +106,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB4BCB256678752F68D75C35 /* libPods-appgobarber-tvOSTests.a in Frameworks */,
+				AB4BCB256678752F68D75C35 /* libPods-apphairshop-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* appgobarberTests */ = {
+		00E356EF1AD99517003FC87E /* apphairshopTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* appgobarberTests.m */,
+				00E356F21AD99517003FC87E /* apphairshopTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = appgobarberTests;
+			path = apphairshopTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -130,7 +130,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* appgobarber */ = {
+		13B07FAE1A68108700A75B9A /* apphairshop */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -141,7 +141,7 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = appgobarber;
+			name = apphairshop;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -149,10 +149,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				E70B0E947603373BF1FE1F75 /* libPods-appgobarber.a */,
-				77100080C3AFBAFBAF848328 /* libPods-appgobarber-appgobarberTests.a */,
-				EEB1FA62EDC9864A0395E0A7 /* libPods-appgobarber-tvOS.a */,
-				798C8D577609C08FA0FA9001 /* libPods-appgobarber-tvOSTests.a */,
+				E70B0E947603373BF1FE1F75 /* libPods-apphairshop.a */,
+				77100080C3AFBAFBAF848328 /* libPods-apphairshop-apphairshopTests.a */,
+				EEB1FA62EDC9864A0395E0A7 /* libPods-apphairshop-tvOS.a */,
+				798C8D577609C08FA0FA9001 /* libPods-apphairshop-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -167,9 +167,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* appgobarber */,
+				13B07FAE1A68108700A75B9A /* apphairshop */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* appgobarberTests */,
+				00E356EF1AD99517003FC87E /* apphairshopTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				C721A6AF97F688DA7ECD75FF /* Pods */,
@@ -183,10 +183,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* appgobarber.app */,
-				00E356EE1AD99517003FC87E /* appgobarberTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* appgobarber-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* appgobarber-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* apphairshop.app */,
+				00E356EE1AD99517003FC87E /* apphairshopTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* apphairshop-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* apphairshop-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,14 +194,14 @@
 		C721A6AF97F688DA7ECD75FF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DBDEDEAE860F12647F00BCFE /* Pods-appgobarber.debug.xcconfig */,
-				1BF4BCB4AF5D673ED3074BCF /* Pods-appgobarber.release.xcconfig */,
-				F51EF76868428879193489FF /* Pods-appgobarber-appgobarberTests.debug.xcconfig */,
-				5EE6708FECAEC905F245F985 /* Pods-appgobarber-appgobarberTests.release.xcconfig */,
-				44E0519477E2E31E5FA6EEBC /* Pods-appgobarber-tvOS.debug.xcconfig */,
-				7FFA0AC7F61021FECE3C4308 /* Pods-appgobarber-tvOS.release.xcconfig */,
-				913E3A478696115196B54835 /* Pods-appgobarber-tvOSTests.debug.xcconfig */,
-				C6AB2FB071633EE4F92E41C2 /* Pods-appgobarber-tvOSTests.release.xcconfig */,
+				DBDEDEAE860F12647F00BCFE /* Pods-apphairshop.debug.xcconfig */,
+				1BF4BCB4AF5D673ED3074BCF /* Pods-apphairshop.release.xcconfig */,
+				F51EF76868428879193489FF /* Pods-apphairshop-apphairshopTests.debug.xcconfig */,
+				5EE6708FECAEC905F245F985 /* Pods-apphairshop-apphairshopTests.release.xcconfig */,
+				44E0519477E2E31E5FA6EEBC /* Pods-apphairshop-tvOS.debug.xcconfig */,
+				7FFA0AC7F61021FECE3C4308 /* Pods-apphairshop-tvOS.release.xcconfig */,
+				913E3A478696115196B54835 /* Pods-apphairshop-tvOSTests.debug.xcconfig */,
+				C6AB2FB071633EE4F92E41C2 /* Pods-apphairshop-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -220,9 +220,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* appgobarberTests */ = {
+		00E356ED1AD99517003FC87E /* apphairshopTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "appgobarberTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "apphairshopTests" */;
 			buildPhases = (
 				67CDE1719FEE3260928FE551 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -235,14 +235,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = appgobarberTests;
-			productName = appgobarberTests;
-			productReference = 00E356EE1AD99517003FC87E /* appgobarberTests.xctest */;
+			name = apphairshopTests;
+			productName = apphairshopTests;
+			productReference = 00E356EE1AD99517003FC87E /* apphairshopTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* appgobarber */ = {
+		13B07F861A680F5B00A75B9A /* apphairshop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "appgobarber" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "apphairshop" */;
 			buildPhases = (
 				CACA8D11C1C8012F8ACDEF8F /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -256,14 +256,14 @@
 			);
 			dependencies = (
 			);
-			name = appgobarber;
-			productName = appgobarber;
-			productReference = 13B07F961A680F5B00A75B9A /* appgobarber.app */;
+			name = apphairshop;
+			productName = apphairshop;
+			productReference = 13B07F961A680F5B00A75B9A /* apphairshop.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* appgobarber-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* apphairshop-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "appgobarber-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "apphairshop-tvOS" */;
 			buildPhases = (
 				9701C971CD8D5AD4AFA48F40 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -276,14 +276,14 @@
 			);
 			dependencies = (
 			);
-			name = "appgobarber-tvOS";
-			productName = "appgobarber-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* appgobarber-tvOS.app */;
+			name = "apphairshop-tvOS";
+			productName = "apphairshop-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* apphairshop-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* appgobarber-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* apphairshop-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "appgobarber-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "apphairshop-tvOSTests" */;
 			buildPhases = (
 				8B4504919214F791E36F6D3F /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -295,9 +295,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "appgobarber-tvOSTests";
-			productName = "appgobarber-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* appgobarber-tvOSTests.xctest */;
+			name = "apphairshop-tvOSTests";
+			productName = "apphairshop-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* apphairshop-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -326,7 +326,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "appgobarber" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "apphairshop" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -339,10 +339,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* appgobarber */,
-				00E356ED1AD99517003FC87E /* appgobarberTests */,
-				2D02E47A1E0B4A5D006451C7 /* appgobarber-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* appgobarber-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* apphairshop */,
+				00E356ED1AD99517003FC87E /* apphairshopTests */,
+				2D02E47A1E0B4A5D006451C7 /* apphairshop-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* apphairshop-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -420,7 +420,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-appgobarber-appgobarberTests/Pods-appgobarber-appgobarberTests-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-apphairshop-apphairshopTests/Pods-apphairshop-apphairshopTests-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -459,7 +459,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-appgobarber-appgobarberTests/Pods-appgobarber-appgobarberTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-apphairshop-apphairshopTests/Pods-apphairshop-apphairshopTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		67CDE1719FEE3260928FE551 /* [CP] Check Pods Manifest.lock */ = {
@@ -477,7 +477,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-appgobarber-appgobarberTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-apphairshop-apphairshopTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -499,7 +499,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-appgobarber-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-apphairshop-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -521,7 +521,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-appgobarber-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-apphairshop-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -543,7 +543,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-appgobarber-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-apphairshop-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -556,7 +556,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-appgobarber/Pods-appgobarber-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-apphairshop/Pods-apphairshop-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -595,7 +595,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-appgobarber/Pods-appgobarber-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-apphairshop/Pods-apphairshop-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -643,7 +643,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* appgobarberTests.m in Sources */,
+				00E356F31AD99517003FC87E /* apphairshopTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,7 +669,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* appgobarberTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* apphairshopTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,12 +678,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* appgobarber */;
+			target = 13B07F861A680F5B00A75B9A /* apphairshop */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* appgobarber-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* apphairshop-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -695,7 +695,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = appgobarber;
+			path = apphairshop;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -703,14 +703,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F51EF76868428879193489FF /* Pods-appgobarber-appgobarberTests.debug.xcconfig */;
+			baseConfigurationReference = F51EF76868428879193489FF /* Pods-apphairshop-apphairshopTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = appgobarberTests/Info.plist;
+				INFOPLIST_FILE = apphairshopTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -720,17 +720,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/appgobarber.app/appgobarber";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/apphairshop.app/apphairshop";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5EE6708FECAEC905F245F985 /* Pods-appgobarber-appgobarberTests.release.xcconfig */;
+			baseConfigurationReference = 5EE6708FECAEC905F245F985 /* Pods-apphairshop-apphairshopTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = appgobarberTests/Info.plist;
+				INFOPLIST_FILE = apphairshopTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -740,13 +740,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/appgobarber.app/appgobarber";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/apphairshop.app/apphairshop";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBDEDEAE860F12647F00BCFE /* Pods-appgobarber.debug.xcconfig */;
+			baseConfigurationReference = DBDEDEAE860F12647F00BCFE /* Pods-apphairshop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -756,7 +756,7 @@
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
 				);
-				INFOPLIST_FILE = appgobarber/Info.plist;
+				INFOPLIST_FILE = apphairshop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -764,7 +764,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = appgobarber;
+				PRODUCT_NAME = apphairshop;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -773,12 +773,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1BF4BCB4AF5D673ED3074BCF /* Pods-appgobarber.release.xcconfig */;
+			baseConfigurationReference = 1BF4BCB4AF5D673ED3074BCF /* Pods-apphairshop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = appgobarber/Info.plist;
+				INFOPLIST_FILE = apphairshop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -786,7 +786,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = appgobarber;
+				PRODUCT_NAME = apphairshop;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -794,7 +794,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44E0519477E2E31E5FA6EEBC /* Pods-appgobarber-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 44E0519477E2E31E5FA6EEBC /* Pods-apphairshop-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -805,14 +805,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "appgobarber-tvOS/Info.plist";
+				INFOPLIST_FILE = "apphairshop-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.appgobarber-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.apphairshop-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -822,7 +822,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FFA0AC7F61021FECE3C4308 /* Pods-appgobarber-tvOS.release.xcconfig */;
+			baseConfigurationReference = 7FFA0AC7F61021FECE3C4308 /* Pods-apphairshop-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -833,14 +833,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "appgobarber-tvOS/Info.plist";
+				INFOPLIST_FILE = "apphairshop-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.appgobarber-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.apphairshop-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -850,7 +850,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 913E3A478696115196B54835 /* Pods-appgobarber-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 913E3A478696115196B54835 /* Pods-apphairshop-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -860,24 +860,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "appgobarber-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "apphairshop-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.appgobarber-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.apphairshop-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/appgobarber-tvOS.app/appgobarber-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/apphairshop-tvOS.app/apphairshop-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6AB2FB071633EE4F92E41C2 /* Pods-appgobarber-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = C6AB2FB071633EE4F92E41C2 /* Pods-apphairshop-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -887,17 +887,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "appgobarber-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "apphairshop-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.appgobarber-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.apphairshop-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/appgobarber-tvOS.app/appgobarber-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/apphairshop-tvOS.app/apphairshop-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -1018,7 +1018,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "appgobarberTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "apphairshopTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -1027,7 +1027,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "appgobarber" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "apphairshop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -1036,7 +1036,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "appgobarber-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "apphairshop-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -1045,7 +1045,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "appgobarber-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "apphairshop-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -1054,7 +1054,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "appgobarber" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "apphairshop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
