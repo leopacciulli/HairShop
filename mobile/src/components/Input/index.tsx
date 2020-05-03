@@ -53,6 +53,11 @@ const Input: React.RefForwardingComponent<InputRef, InputProps> = (
   }));
 
   useEffect(() => {
+    if (fieldName === 'name' || fieldName === 'mail') {
+      setIsFocused(true);
+      inputElementRef.current?.focus();
+    }
+
     registerField<string>({
       name: fieldName,
       ref: inputValueRef.current,

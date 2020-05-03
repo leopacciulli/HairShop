@@ -31,7 +31,7 @@ import {
 import logoImg from '../../assets/logo.png';
 
 interface SignInFormData {
-  email: string;
+  mail: string;
   password: string;
 }
 
@@ -47,7 +47,7 @@ const SignIn: React.FC = () => {
         formRef.current?.setErrors({});
 
         const schema = Yup.object().shape({
-          email: Yup.string()
+          mail: Yup.string()
             .required('E-mail obrigatório')
             .email('Digite um e-mail válido'),
           password: Yup.string().required('Senha obrigatória'),
@@ -57,7 +57,7 @@ const SignIn: React.FC = () => {
           abortEarly: false, // retorna todos os erros do input
         });
 
-        await signIn({ email: data.email, password: data.password });
+        await signIn({ email: data.mail, password: data.password });
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
@@ -97,7 +97,7 @@ const SignIn: React.FC = () => {
                 autoCapitalize="none"
                 autoCorrect={false}
                 keyboardType="email-address"
-                name="email"
+                name="mail"
                 icon="mail"
                 placeholder="E-mail"
                 returnKeyType="next"

@@ -23,6 +23,11 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
   const { fieldName, defaultValue, error, registerField } = useField(name);
 
   useEffect(() => {
+    if (fieldName === 'name' || fieldName === 'mail') {
+      setIsFocused(true);
+      inputRef.current?.focus();
+    }
+
     registerField({
       name: fieldName,
       ref: inputRef.current,
