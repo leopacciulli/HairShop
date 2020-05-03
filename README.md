@@ -8,13 +8,13 @@ Project being built along with Rocketseat's GoStack - <a href="https://rocketsea
 </h3>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/leopacciulli/Bootcamp-GoBarber?color=yellow">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/leopacciulli/HairShop?color=yellow">
   
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/leopacciulli/Bootcamp-GoBarber?color=yellow">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/leopacciulli/HairShop?color=yellow">
 
-  <img alt="GitHub repo size in bytes" src="https://img.shields.io/github/repo-size/leopacciulli/Bootcamp-GoBarber?color=yellow">
+  <img alt="GitHub repo size in bytes" src="https://img.shields.io/github/repo-size/leopacciulli/HairShop?color=yellow">
   
-  <img alt="Made by Rocketseat" src="https://img.shields.io/github/license/leopacciulli/Bootcamp-GoBarber">
+  <img alt="Made by Rocketseat" src="https://img.shields.io/github/license/leopacciulli/HairShop">
 
   <br>
 
@@ -99,7 +99,7 @@ The Mobile was developed with React Native and TypeScript. For standardization a
 <br>
 
 ## 🏁 Starting the project
-Clone the project: `git clone https://github.com/leopacciulli/Bootcamp-GoBarber.git`
+Clone the project: `git clone https://github.com/leopacciulli/HairShop.git`
 
 <br>
 
