@@ -40,7 +40,7 @@ Hair Shop is an application for hairdressing salon, where hairdressers can regis
 <br>
 
 ## 🤖 Back-End
-The Back-End was developed with Node.js and TypeScript. For standardization and organization of the code, ESLint, Prettier and EditorConfig were used. The connection to the PostgreSQL database was made with DBeaver and Docker to create containers with TypeORM. For authentication and user access control was used JWT (Json Web Token). To upload images was used Multer. Architecture remade with DDD concept.
+The Back-End was developed with Node.js and TypeScript. For standardization and organization of the code, ESLint, Prettier and EditorConfig were used. The connection to the PostgreSQL database was made with DBeaver and Docker to create containers with TypeORM. For authentication and user access control was used JWT (Json Web Token). To upload images was used Multer. Architecture remade with DDD concept. It was used Jest to perform unit tests in the application.
 
 ### 🛠 Technologies
 - **[Node.js](https://nodejs.org/en/)**
@@ -51,6 +51,7 @@ The Back-End was developed with Node.js and TypeScript. For standardization and 
 - *[DBeaver](https://dbeaver.io/)*
 - *[TypeORM](https://typeorm.io/#/)*
 - *[JWT](https://jwt.io/)*
+- *[Jest](https://jestjs.io/)*
 
 ### ⚙️ Finished features
 - Register in the application
@@ -115,6 +116,13 @@ $ yarn
 
 # to start the application on port 3333
 $ yarn dev:server
+````
+<br>
+
+Run tests on the back-end
+````zsh
+# to run tests
+$ yarn test
 ````
 <br>
 
