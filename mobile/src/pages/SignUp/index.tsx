@@ -1,6 +1,5 @@
 import React, { useRef, useCallback } from 'react';
 import {
-  Image,
   View,
   KeyboardAvoidingView,
   Platform,
@@ -21,6 +20,7 @@ import Button from '../../components/Button';
 
 import {
   Container,
+  Logo,
   Title,
   BackToSignInButton,
   BackToSignInText,
@@ -91,7 +91,7 @@ const SignUp: React.FC = () => {
           contentContainerStyle={{ flex: 1 }}
         >
           <Container>
-            <Image source={logoImg} />
+            <Logo source={logoImg} />
 
             <View>
               <Title>Crie sua conta</Title>

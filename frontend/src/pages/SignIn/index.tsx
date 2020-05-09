@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 import { useAuth } from '../../hooks/auth';
 import { useToast } from '../../hooks/toast';
 import getValidationErrors from '../../utils/getValidationErrors';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
