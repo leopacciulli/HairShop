@@ -15,6 +15,7 @@ appointmentsRouter.use(ensureAuthenticated);
 // });
 
 appointmentsRouter.post('/', appointmentsController.create);
+appointmentsRouter.delete('/:appointment_id', appointmentsController.delete);
 
 export default appointmentsRouter;
 

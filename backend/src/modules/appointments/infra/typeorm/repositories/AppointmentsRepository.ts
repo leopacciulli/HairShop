@@ -3,8 +3,10 @@ import { getRepository, Repository, Raw } from 'typeorm';
 import Appointment from '../entities/Appointment';
 import IAppointmentsRepository from '../../../repositories/IAppointmentsRepository';
 import ICreateAppointmentDTO from '../../../dtos/ICreateAppointmentDTO';
+import IDeleteAppointmentDTO from '../../../dtos/IDeleteAppointmentDTO';
 import IFindAllInMonthProviderDTO from '../../../dtos/IFindAllInMonthFromProviderDTO';
 import IFindAllInDayFromProviderDTO from '../../../dtos/IFindAllInDayFromProviderDTO';
+import IFindAppointmentsFromUserLoggedDTO from '../../../dtos/IFindAppointmentsFromUserLoggedDTO';
 
 class AppointmentsRepository implements IAppointmentsRepository {
   private ormRepository: Repository<Appointment>;
@@ -61,6 +63,24 @@ class AppointmentsRepository implements IAppointmentsRepository {
     });
 
     return appointments;
+  }
+
+  public async findAppointmentsFromUserLogged({
+    user_id,
+  }: IFindAppointmentsFromUserLoggedDTO): Promise<Appointment[]> {
+    const appointments = await this.ormRepository.find({
+      where: {
+        user_id,
+      },
+    });
+
+    return appointments;
+  }
+
+  public async delete({
+    appointment_id,
+  }: IDeleteAppointmentDTO): Promise<void> {
+    await this.ormRepository.delete(appointment_id);
   }
 
   public async create({

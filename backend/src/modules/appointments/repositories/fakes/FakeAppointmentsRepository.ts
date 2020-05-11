@@ -4,8 +4,10 @@ import { isEqual, getMonth, getYear, getDate } from 'date-fns';
 import Appointment from '../../infra/typeorm/entities/Appointment';
 import IAppointmentsRepository from '../IAppointmentsRepository';
 import ICreateAppointmentDTO from '../../dtos/ICreateAppointmentDTO';
+import IDeleteAppointmentDTO from '../../dtos/IDeleteAppointmentDTO';
 import IFindAllInMonthProviderDTO from '../../dtos/IFindAllInMonthFromProviderDTO';
 import IFindAllInDayFromProviderDTO from '../../dtos/IFindAllInDayFromProviderDTO';
+import IFindAppointmentsFromUserLoggedDTO from '../../dtos/IFindAppointmentsFromUserLoggedDTO';
 
 class FakeAppointmentsRepository implements IAppointmentsRepository {
   private appointments: Appointment[] = [];
@@ -50,6 +52,29 @@ class FakeAppointmentsRepository implements IAppointmentsRepository {
     });
 
     return appointments;
+  }
+
+  public async findAppointmentsFromUserLogged({
+    user_id,
+  }: IFindAppointmentsFromUserLoggedDTO): Promise<Appointment[]> {
+    const appointments = this.appointments.filter(
+      appointment => appointment.user_id === user_id,
+    );
+
+    return appointments;
+  }
+
+  public async delete({
+    appointment_id,
+  }: IDeleteAppointmentDTO): Promise<void> {
+    const { appointments } = this;
+
+    appointments.splice(
+      appointments.findIndex(
+        my_appointment => my_appointment.id === appointment_id,
+      ),
+      1,
+    );
   }
 
   public async create({
