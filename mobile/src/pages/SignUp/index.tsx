@@ -150,7 +150,7 @@ const SignUp: React.FC = () => {
 
       <BackToSignInButton onPress={() => navigation.goBack()}>
         <Icon name="arrow-left" size={20} color="#fff" />
-        <BackToSignInText>Voltar para logon</BackToSignInText>
+        <BackToSignInText>Voltar para i</BackToSignInText>
       </BackToSignInButton>
     </>
   );

@@ -8,7 +8,7 @@ interface ContainerProps {
 
 export const Container = styled.View<ContainerProps>`
   width: 100%;
-  height: 50px;
+  height: 45px;
   padding: 0 16px;
   background: #232129;
   border-radius: 10px;

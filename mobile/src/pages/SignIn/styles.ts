@@ -7,11 +7,12 @@ export const Container = styled.View`
   align-items: center;
   justify-content: center;
   padding: 0 30px ${Platform.OS === 'ios' ? 40 : 150}px;
+  margin-top: 50px;
 `;
 
 export const Logo = styled.Image`
-  width: 200px;
-  height: 190px;
+  width: 180px;
+  height: 170px;
 `;
 
 export const Title = styled.Text`
