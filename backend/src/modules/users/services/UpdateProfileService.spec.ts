@@ -21,6 +21,7 @@ describe('UpdateProfile', () => {
   it('should be able to update the profile', async () => {
     const user = await fakeUsersRepository.create({
       name: 'Lucas moraes',
+      nickname: 'Luqinha',
       email: 'lu@gmail.com',
       password: '123123',
     });
@@ -28,6 +29,7 @@ describe('UpdateProfile', () => {
     const updatedUser = await updateProfile.execute({
       user_id: user.id,
       name: 'Lucas da Silva',
+      nickname: 'Luqinha',
       email: 'lusilva@gmail.com',
     });
 
@@ -38,12 +40,14 @@ describe('UpdateProfile', () => {
   it('should not be able to change to another user email', async () => {
     await fakeUsersRepository.create({
       name: 'Lucas moraes',
+      nickname: 'Luqinha',
       email: 'lu@gmail.com',
       password: '123123',
     });
 
     const user = await fakeUsersRepository.create({
       name: 'Lucas moraes',
+      nickname: 'Luqinha',
       email: 'teste@gmail.com',
       password: '123123',
     });
@@ -52,6 +56,7 @@ describe('UpdateProfile', () => {
       updateProfile.execute({
         user_id: user.id,
         name: 'Lucas da Silva',
+        nickname: 'Luqinha',
         email: 'lu@gmail.com',
       }),
     ).rejects.toBeInstanceOf(AppError);
@@ -60,6 +65,7 @@ describe('UpdateProfile', () => {
   it('should be able to update the password', async () => {
     const user = await fakeUsersRepository.create({
       name: 'Lucas moraes',
+      nickname: 'Luqinha',
       email: 'lu@gmail.com',
       password: '123123',
     });
@@ -67,6 +73,7 @@ describe('UpdateProfile', () => {
     const updatedUser = await updateProfile.execute({
       user_id: user.id,
       name: 'Lucas da Silva',
+      nickname: 'Luqinha',
       email: 'lusilva@gmail.com',
       old_password: '123123',
       password: '123123',
@@ -78,6 +85,7 @@ describe('UpdateProfile', () => {
   it('should not be able to update the password without old password', async () => {
     const user = await fakeUsersRepository.create({
       name: 'Lucas moraes',
+      nickname: 'Luqinha',
       email: 'lu@gmail.com',
       password: '123123',
     });
@@ -86,6 +94,7 @@ describe('UpdateProfile', () => {
       updateProfile.execute({
         user_id: user.id,
         name: 'Lucas da Silva',
+        nickname: 'Luqinha',
         email: 'lusilva@gmail.com',
         password: '123123',
       }),
@@ -95,6 +104,7 @@ describe('UpdateProfile', () => {
   it('should not be able to update the password with wrong old password', async () => {
     const user = await fakeUsersRepository.create({
       name: 'Lucas moraes',
+      nickname: 'Luqinha',
       email: 'lu@gmail.com',
       password: '123123',
     });
@@ -103,6 +113,7 @@ describe('UpdateProfile', () => {
       updateProfile.execute({
         user_id: user.id,
         name: 'Lucas da Silva',
+        nickname: 'Luqinha',
         email: 'lusilva@gmail.com',
         old_password: '33333',
         password: '123123',
@@ -115,6 +126,7 @@ describe('UpdateProfile', () => {
       updateProfile.execute({
         user_id: 'non id',
         name: 'Teste',
+        nickname: 'Luqinha',
         email: 'teste@gmail.com',
       }),
     ).rejects.toBeInstanceOf(AppError);

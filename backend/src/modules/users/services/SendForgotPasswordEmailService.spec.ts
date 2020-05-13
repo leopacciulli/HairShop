@@ -28,6 +28,7 @@ describe('SendForgotPasswordEmail', () => {
 
     await fakeUsersRepository.create({
       name: 'Leonardo Pacc',
+      nickname: 'Luqinha',
       email: 'leopacc@gmail.com',
       password: '123456',
     });
@@ -51,6 +52,7 @@ describe('SendForgotPasswordEmail', () => {
     const generateToken = jest.spyOn(fakeUserTokensRepository, 'generate');
     const user = await fakeUsersRepository.create({
       name: 'Leonardo Pacc',
+      nickname: 'Luqinha',
       email: 'leopacc@gmail.com',
       password: '123456',
     });

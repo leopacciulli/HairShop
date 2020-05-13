@@ -13,18 +13,21 @@ describe('ListProviders', () => {
   it('should be able to list the providers', async () => {
     const user1 = await fakeUsersRepository.create({
       name: 'Lucas moraes',
+      nickname: 'Luquinha',
       email: 'lu@gmail.com',
       password: '123123',
     });
 
     const user2 = await fakeUsersRepository.create({
       name: 'Lucas silva',
+      nickname: 'Luquinha',
       email: 'lusilva@gmail.com',
       password: '123123',
     });
 
     const loggedUser = await fakeUsersRepository.create({
       name: 'Lucas logado',
+      nickname: 'Luquinha',
       email: 'lulogado@gmail.com',
       password: '123123',
     });

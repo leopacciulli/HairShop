@@ -1,15 +1,24 @@
-import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
-import DeleteAppointmentService from './DeleteAppointmentService';
 import AppError from '../../../shared/errors/AppError';
 
-let fakeAppointmentsRepository: FakeAppointmentsRepository;
+import DeleteAppointmentService from './DeleteAppointmentService';
+import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
+import FakeNotificationsRepository from '../../notifications/repositories/fakes/FakeNotificationsRepository';
+import FakeUsersRepository from '../../users/repositories/fakes/FakeUsersRepository';
+
 let deleteAppointment: DeleteAppointmentService;
+let fakeAppointmentsRepository: FakeAppointmentsRepository;
+let fakeNotificationsRepository: FakeNotificationsRepository;
+let fakeUsersRepository: FakeUsersRepository;
 
 describe('DeleteAppointment', () => {
   beforeEach(() => {
     fakeAppointmentsRepository = new FakeAppointmentsRepository();
+    fakeNotificationsRepository = new FakeNotificationsRepository();
+    fakeUsersRepository = new FakeUsersRepository();
     deleteAppointment = new DeleteAppointmentService(
       fakeAppointmentsRepository,
+      fakeNotificationsRepository,
+      fakeUsersRepository,
     );
   });
 
@@ -18,8 +27,15 @@ describe('DeleteAppointment', () => {
       return new Date(2020, 4, 10, 12).getTime();
     });
 
+    const user = await fakeUsersRepository.create({
+      name: 'Lucas moraes',
+      nickname: 'Luquinha',
+      email: 'lu@gmail.com',
+      password: '123123',
+    });
+
     const appointmentCreated = await fakeAppointmentsRepository.create({
-      provider_id: 'userid',
+      provider_id: user.id,
       user_id: 'user',
       date: new Date(2020, 4, 10, 13),
     });
@@ -37,8 +53,15 @@ describe('DeleteAppointment', () => {
       return new Date(2020, 4, 10, 12).getTime();
     });
 
+    const user = await fakeUsersRepository.create({
+      name: 'Lucas moraes',
+      nickname: 'Luquinha',
+      email: 'lu@gmail.com',
+      password: '123123',
+    });
+
     const appointmentCreated = await fakeAppointmentsRepository.create({
-      provider_id: 'userid',
+      provider_id: user.id,
       user_id: 'user',
       date: new Date(2020, 4, 10, 13),
     });

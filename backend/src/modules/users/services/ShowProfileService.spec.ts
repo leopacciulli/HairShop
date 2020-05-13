@@ -16,6 +16,7 @@ describe('UpdateProfile', () => {
   it('should be able to show the profile', async () => {
     const user = await fakeUsersRepository.create({
       name: 'Lucas moraes',
+      nickname: 'Luqinha',
       email: 'lu@gmail.com',
       password: '123123',
     });

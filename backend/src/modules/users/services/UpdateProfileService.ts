@@ -7,6 +7,7 @@ import IHashProvider from '../providers/HashProvider/models/IHashProvider';
 interface IRequest {
   user_id: string;
   name: string;
+  nickname: string;
   email: string;
   old_password?: string;
   password?: string;
@@ -23,6 +24,7 @@ class UpdateProfileService {
   public async execute({
     user_id,
     name,
+    nickname,
     email,
     password,
     old_password,
@@ -40,6 +42,7 @@ class UpdateProfileService {
     }
 
     user.name = name;
+    user.nickname = nickname;
     user.email = email;
 
     if (password && !old_password) {

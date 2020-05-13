@@ -30,14 +30,16 @@ import logoImg from '../../assets/logo.png';
 
 interface SignUpFormData {
   name: string;
+  nickname: string;
   email: string;
   password: string;
 }
 
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
-  const passwordInputRef = useRef<TextInput>(null);
+  const nicknameInputRef = useRef<TextInput>(null);
   const emailInputRef = useRef<TextInput>(null);
+  const passwordInputRef = useRef<TextInput>(null);
   const navigation = useNavigation();
 
   const handleSignUp = useCallback(
@@ -47,6 +49,7 @@ const SignUp: React.FC = () => {
 
         const schema = Yup.object().shape({
           name: Yup.string().required('Nome obrigatório'),
+          nickname: Yup.string().required('Apelido obrigatório'),
           email: Yup.string()
             .required('E-mail obrigatório')
             .email('Digite um e-mail válido'),
@@ -102,7 +105,19 @@ const SignUp: React.FC = () => {
                 autoCapitalize="words"
                 name="name"
                 icon="user"
-                placeholder="Nome"
+                placeholder="Nome Completo"
+                returnKeyType="next"
+                onSubmitEditing={() => {
+                  nicknameInputRef.current?.focus();
+                }}
+              />
+
+              <Input
+                ref={nicknameInputRef}
+                autoCapitalize="words"
+                name="nickname"
+                icon="smile"
+                placeholder="Apelido"
                 returnKeyType="next"
                 onSubmitEditing={() => {
                   emailInputRef.current?.focus();
@@ -149,8 +164,8 @@ const SignUp: React.FC = () => {
       </KeyboardAvoidingView>
 
       <BackToSignInButton onPress={() => navigation.goBack()}>
-        <Icon name="arrow-left" size={20} color="#fff" />
-        <BackToSignInText>Voltar para i</BackToSignInText>
+        <Icon name="arrow-left" size={16} color="#fff" />
+        <BackToSignInText>Voltar para login</BackToSignInText>
       </BackToSignInButton>
     </>
   );

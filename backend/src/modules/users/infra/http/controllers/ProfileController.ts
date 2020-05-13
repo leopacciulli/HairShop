@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Response, Request } from 'express';
 import { container } from 'tsyringe';
 
 import UpdateProfileService from '../../../services/UpdateProfileService';
@@ -19,13 +19,14 @@ export default class ProfileController {
 
   public async update(request: Request, response: Response): Promise<Response> {
     const user_id = request.user.id;
-    const { name, email, password, old_password } = request.body;
+    const { name, email, nickname, password, old_password } = request.body;
 
     const updateProfile = container.resolve(UpdateProfileService);
 
     const user = await updateProfile.execute({
       user_id,
       name,
+      nickname,
       email,
       password,
       old_password,

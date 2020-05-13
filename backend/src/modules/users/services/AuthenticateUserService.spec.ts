@@ -25,6 +25,7 @@ describe('AuthenticateUser', () => {
   it('should be able to authenticate', async () => {
     const user = await createUser.execute({
       name: 'Lucas moraes',
+      nickname: 'Luqinha',
       email: 'lu@gmail.com',
       password: '123123',
     });
@@ -50,6 +51,7 @@ describe('AuthenticateUser', () => {
   it('should not be able to authenticate with wrong password', async () => {
     await createUser.execute({
       name: 'Lucas moraes',
+      nickname: 'Luqinha',
       email: 'lu@gmail.com',
       password: '123123',
     });

@@ -1,15 +1,24 @@
-import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
-import CreateAppointmentService from './CreateAppointmentService';
 import AppError from '../../../shared/errors/AppError';
 
+import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
+import FakeNotificationsRepository from '../../notifications/repositories/fakes/FakeNotificationsRepository';
+import FakeUsersRepository from '../../users/repositories/fakes/FakeUsersRepository';
+import CreateAppointmentService from './CreateAppointmentService';
+
 let fakeAppointmentsRepository: FakeAppointmentsRepository;
+let fakeNotificationsRepository: FakeNotificationsRepository;
+let fakeUsersRepository: FakeUsersRepository;
 let createAppointment: CreateAppointmentService;
 
 describe('CreateAppointment', () => {
   beforeEach(() => {
     fakeAppointmentsRepository = new FakeAppointmentsRepository();
+    fakeNotificationsRepository = new FakeNotificationsRepository();
+    fakeUsersRepository = new FakeUsersRepository();
     createAppointment = new CreateAppointmentService(
       fakeAppointmentsRepository,
+      fakeNotificationsRepository,
+      fakeUsersRepository,
     );
   });
 
@@ -18,14 +27,21 @@ describe('CreateAppointment', () => {
       return new Date(2020, 4, 10, 12).getTime();
     });
 
+    const user = await fakeUsersRepository.create({
+      name: 'Lucas moraes',
+      nickname: 'Luquinha',
+      email: 'lu@gmail.com',
+      password: '123123',
+    });
+
     const appointment = await createAppointment.execute({
       date: new Date(2020, 4, 10, 13),
       user_id: '1231234',
-      provider_id: '123123',
+      provider_id: user.id,
     });
 
     expect(appointment).toHaveProperty('id');
-    expect(appointment.provider_id).toBe('123123');
+    expect(appointment.provider_id).toBe(user.id);
   });
 
   it('should not be able to create two appointments on the same time', async () => {
@@ -33,19 +49,26 @@ describe('CreateAppointment', () => {
       return new Date(2020, 4, 10, 12).getTime();
     });
 
+    const user = await fakeUsersRepository.create({
+      name: 'Lucas moraes',
+      nickname: 'Luquinha',
+      email: 'lu@gmail.com',
+      password: '123123',
+    });
+
     const appointmentDate = new Date(2020, 4, 10, 13);
 
     await createAppointment.execute({
       date: appointmentDate,
       user_id: '1231234',
-      provider_id: '123123',
+      provider_id: user.id,
     });
 
     await expect(
       createAppointment.execute({
         date: appointmentDate,
         user_id: '1231234',
-        provider_id: '123123',
+        provider_id: user.id,
       }),
     ).rejects.toBeInstanceOf(AppError);
   });
