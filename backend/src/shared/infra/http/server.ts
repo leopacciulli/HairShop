@@ -7,14 +7,16 @@ import 'express-async-errors';
 
 import uploadConfig from '../../../config/upload';
 import AppError from '../../errors/AppError';
+import rateLimiter from './middlewares/rateLimiter';
 import routes from './routes';
 
 import '../typeorm';
 import '../../container';
 
 const app = express();
-app.use(cors());
 
+app.use(rateLimiter);
+app.use(cors());
 app.use(express.json());
 app.use('/files', express.static(uploadConfig.uploadsFilter));
 app.use(routes);
@@ -30,6 +32,8 @@ app.use(
       });
     }
 
+    console.log('ERRO', err);
+
     return response.status(500).json({
       status: 'error',
       message: 'Internal server error',
@@ -38,5 +42,7 @@ app.use(
 );
 
 app.listen(3333, () => {
-  console.log('🚀 Server started on port 3333');
+  console.log(' ------------ 🚀 ------------');
+  console.log('|Server started on port 3333 |');
+  console.log(' ------------ 🚀 ------------');
 });

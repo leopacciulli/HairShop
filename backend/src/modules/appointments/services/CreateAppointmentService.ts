@@ -7,6 +7,7 @@ import Appointment from '../infra/typeorm/entities/Appointment';
 import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
 import INotificationsRepository from '../../notifications/repositories/INotificationsRepository';
 import IUsersRepository from '../../users/repositories/IUsersRepository';
+import ICacheProvider from '../../../shared/container/providers/CacheProvider/models/ICacheProvider';
 
 interface IRequest {
   provider_id: string;
@@ -25,6 +26,9 @@ class CreateAppointmentService {
 
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
+
+    @inject('CacheProvider')
+    private cacheProvider: ICacheProvider,
   ) {}
 
   public async execute({
@@ -79,6 +83,13 @@ class CreateAppointmentService {
         user && user.nickname
       } agendou um horário para o dia ${dateFormated} com ${provider.name}`,
     });
+
+    await this.cacheProvider.invalidate(
+      `provider-appointments:${provider_id}:${format(
+        appointmentDate,
+        'yyyy-M-d',
+      )}`,
+    );
 
     return appointment;
   }
