@@ -40,7 +40,7 @@ Hair Shop is an application for hairdressing salon, where hairdressers can regis
 <br>
 
 ## 🤖 Back-End
-The Back-End was developed with Node.js and TypeScript. For standardization and organization of the code, ESLint, Prettier and EditorConfig were used. The connection to the PostgreSQL database was made with DBeaver and Docker to create containers with TypeORM. For authentication and user access control was used JWT (Json Web Token). To upload images was used Multer. Architecture remade with DDD concept. It was used Jest to perform unit tests in the application.
+The Back-End was developed with Node.js and TypeScript. For standardization and organization of the code, ESLint, Prettier and EditorConfig were used. The connection to the PostgreSQL database was made with DBeaver and Docker to create containers with TypeORM. For authentication and user access control was used JWT (Json Web Token). To upload images was used Multer. Architecture remade with DDD concept. It was used Jest to perform unit tests in the application. The network was added to the project for caching calls from some API's. Use of nodemailer for email sending tests. Connection to AWS services being SES for sending emails in production and S3 for uploading images. The notification service was also created, being able to notify a provider when an appointment is made.
 
 ### 🛠 Technologies
 - **[Node.js](https://nodejs.org/en/)**
@@ -52,14 +52,17 @@ The Back-End was developed with Node.js and TypeScript. For standardization and 
 - *[TypeORM](https://typeorm.io/#/)*
 - *[JWT](https://jwt.io/)*
 - *[Jest](https://jestjs.io/)*
+- *[AWS](https://aws.amazon.com/pt/)*
+- *[NodeMailer](https://nodemailer.com/about/)*
+- *[Redis](https://redis.io/)*
 
 ### ⚙️ Finished features
 - Register in the application
 - Logon in the application
-- Creation of a user in the application being able to upload his profile photo
-- Creation of the user session being able to perform a login
-- Scheduling created by a "barber / hairdresser"
-- List of schedules made for the user with the active session
+- Send email to user of the "Forgot password"
+- Notify a provider when a scheduling is done
+- Providers Features: List appointments
+- Users Features: Show profile, update profile, update an avatar to profile, forgot password, reset password, create an appointment, delete an appointment, list the availables days and months of the providers
 
 <br>
 
