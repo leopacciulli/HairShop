@@ -8,7 +8,7 @@ interface ContainerProps {
 
 export const Container = styled.View<ContainerProps>`
   width: 100%;
-  height: 35px;
+  height: 40px;
   padding: 0 16px;
   background: #232129;
   border-radius: 10px;
@@ -37,7 +37,7 @@ export const TextInput = styled.TextInput`
   flex: 1;
   color: #fff;
   font-size: 14px;
-  height: 35px;
+  height: 40px;
   font-family: 'RobotoSlab-Regular';
 `;
 

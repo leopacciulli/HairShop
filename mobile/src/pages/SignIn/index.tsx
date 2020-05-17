@@ -62,13 +62,12 @@ const SignIn: React.FC = () => {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
           formRef.current?.setErrors(errors);
-          return;
         }
 
-        Alert.alert(
-          'Erro na autenticação',
-          'Ocorreu um erro ao fazer login, cheque as credenciais.',
-        );
+        // Alert.alert(
+        //   'Erro na autenticação',
+        //   'Ocorreu um erro ao fazer login, cheque as credenciais.',
+        // );
       }
     },
     [signIn],
