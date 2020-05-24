@@ -5,6 +5,7 @@ import { ModalContent, Buttons, ButtonYes, ButtonNo } from './styles';
 interface Props {
   isOpen: boolean;
   handleClose: () => void;
+  handleConfirmCancel: () => void;
   appointment: any;
 }
 
@@ -12,6 +13,7 @@ const ModalCancelAppointment: React.FC<Props> = ({
   isOpen,
   appointment,
   handleClose,
+  handleConfirmCancel,
 }) => {
   return (
     <Modal
@@ -46,7 +48,7 @@ const ModalCancelAppointment: React.FC<Props> = ({
         </span>
         <span>{appointment.user}?</span>
         <Buttons>
-          <ButtonYes type="button" onClick={handleClose}>
+          <ButtonYes type="button" onClick={handleConfirmCancel}>
             Sim
           </ButtonYes>
           <ButtonNo type="button" onClick={handleClose}>

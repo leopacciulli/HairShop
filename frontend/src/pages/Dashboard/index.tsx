@@ -1,11 +1,13 @@
+/* eslint-disable react/jsx-curly-newline */
 import React, { useState, useCallback, useEffect, useMemo } from 'react';
-import { isToday, format, parseISO, isAfter } from 'date-fns';
+import { isToday, format, parseISO, isAfter, isBefore } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { FiPower, FiClock, FiXCircle } from 'react-icons/fi';
 import DayPicker, { DayModifiers } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/auth';
+import { useToast } from '../../hooks/toast';
 import ModalCancelAppointment from '../../components/ModalCancelAppointment';
 
 import logo from '../../assets/logo.png';
@@ -36,13 +38,22 @@ interface Appointment {
   date: string;
   hourFormatted: string;
   user: {
+    id: string;
     name: string;
     avatar: string;
   };
 }
 
+interface AppointmentToCancel {
+  appointment_id: string;
+  user_id: string;
+  user_name: string;
+}
+
 const Dashboard: React.FC = () => {
   const { signOut, user } = useAuth();
+  const { addToast } = useToast();
+  const [today, setToday] = useState('');
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [monthAvailability, setMonthAvailability] = useState<
@@ -51,6 +62,13 @@ const Dashboard: React.FC = () => {
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [modalCancelAppointment, setModalCancelAppointment] = useState(false);
   const [dataCancelAppointment, setDataCancelAppointment] = useState({});
+  const [appointmentToCancel, setAppointmentToCancel] = useState<
+    AppointmentToCancel[]
+  >([]);
+
+  useEffect(() => {
+    setToday(format(new Date(), 'dd/MM/yyyy'));
+  }, []);
 
   useEffect(() => {
     api
@@ -91,13 +109,50 @@ const Dashboard: React.FC = () => {
       hour: appointment.hourFormatted,
       user: appointment.user.name,
     };
+    const dataAppointmentToCancel = {
+      appointment_id: appointment.id,
+      user_id: appointment.user.id,
+      user_name: appointment.user.name,
+    };
+    const arrayAppointment = [dataAppointmentToCancel];
     setDataCancelAppointment(dataAppointment);
+    setAppointmentToCancel(arrayAppointment);
     setModalCancelAppointment(true);
   };
 
   const handleCloseModalCancelAppointment = () => {
     setModalCancelAppointment(false);
   };
+
+  const handleConfirmCancelAppointment = useCallback(async () => {
+    try {
+      await api.delete(
+        `/appointments/${appointmentToCancel[0].appointment_id}`,
+        { data: { user_id: appointmentToCancel[0].user_id } },
+      );
+
+      setAppointments(
+        appointments.filter(
+          (appointment) =>
+            appointment.id !== appointmentToCancel[0].appointment_id,
+        ),
+      );
+
+      addToast({
+        type: 'success',
+        title: 'Agendamento cancelado!',
+        description: `Agendamento do cliente ${appointmentToCancel[0].user_name} foi cancelado.`,
+      });
+    } catch {
+      addToast({
+        type: 'error',
+        title: 'Erro ao cancelar agendamento!',
+        description: `Tente novamente.`,
+      });
+    }
+
+    setModalCancelAppointment(false);
+  }, [addToast, appointments, appointmentToCancel]);
 
   const handleDateChange = useCallback((day: Date, modifiers: DayModifiers) => {
     if (modifiers.available && !modifiers.disabled) {
@@ -110,7 +165,7 @@ const Dashboard: React.FC = () => {
   }, []);
 
   const disabledDays = useMemo(() => {
-    const dates = monthAvailability
+    const disabledDates = monthAvailability
       .filter((monthDay) => monthDay.available === false)
       .map((monthDay) => {
         const year = currentMonth.getFullYear();
@@ -118,7 +173,15 @@ const Dashboard: React.FC = () => {
         return new Date(year, month, monthDay.day);
       });
 
-    return dates;
+    const datesBefore: Array<any> = [];
+    disabledDates.forEach((disabledDate) => {
+      if (isBefore(disabledDate, new Date())) {
+        datesBefore.push(disabledDate);
+      }
+      return datesBefore;
+    });
+
+    return datesBefore;
   }, [currentMonth, monthAvailability]);
 
   const selectedDateAsText = useMemo(() => {
@@ -128,9 +191,13 @@ const Dashboard: React.FC = () => {
   }, [selectedDate]);
 
   const selectedWeekDay = useMemo(() => {
-    return format(selectedDate, 'cccc', {
+    const weekDay = format(selectedDate, 'cccc', {
       locale: ptBR,
     });
+    if (weekDay !== 'sábado' && weekDay !== 'domingo') {
+      return `${weekDay}-feira`;
+    }
+    return weekDay;
   }, [selectedDate]);
 
   const morningAppointments = useMemo(() => {
@@ -147,7 +214,7 @@ const Dashboard: React.FC = () => {
 
   const nextAppointment = useMemo(() => {
     return appointments.find((appointment) => {
-      isAfter(parseISO(appointment.date), new Date());
+      return isAfter(parseISO(appointment.date), new Date());
     });
   }, [appointments]);
 
@@ -179,6 +246,13 @@ const Dashboard: React.FC = () => {
           <p>
             <span>{selectedDateAsText}</span>
             <span>{selectedWeekDay}</span>
+          </p>
+          <p>
+            <span>
+              {appointments.length === 10
+                ? 'Agenda lotada'
+                : 'Há horários disponíveis'}
+            </span>
           </p>
 
           {isToday(selectedDate) && nextAppointment && (
@@ -228,7 +302,8 @@ const Dashboard: React.FC = () => {
                   <button
                     type="button"
                     onClick={() =>
-                      handleOpenModalCancelAppointment(appointment)}
+                      handleOpenModalCancelAppointment(appointment)
+                    }
                   >
                     <FiXCircle size={24} />
                   </button>
@@ -259,7 +334,8 @@ const Dashboard: React.FC = () => {
                   <button
                     type="button"
                     onClick={() =>
-                      handleOpenModalCancelAppointment(appointment)}
+                      handleOpenModalCancelAppointment(appointment)
+                    }
                   >
                     <FiXCircle size={24} />
                   </button>
@@ -270,12 +346,13 @@ const Dashboard: React.FC = () => {
         </Schedule>
 
         <Calendar>
+          <strong>Hoje é dia: {today}</strong>
           <DayPicker
             weekdaysShort={['D', 'S', 'T', 'Q', 'Q', 'S', 'S']}
             fromMonth={new Date()}
-            disabledDays={[{ daysOfWeek: [0, 6] }, ...disabledDays]}
+            disabledDays={[{ daysOfWeek: [0, 1] }, ...disabledDays]}
             modifiers={{
-              available: { daysOfWeek: [1, 2, 3, 4, 5] },
+              available: { daysOfWeek: [2, 3, 4, 5, 6] },
             }}
             selectedDays={selectedDate}
             onDayClick={handleDateChange}
@@ -301,6 +378,7 @@ const Dashboard: React.FC = () => {
       <ModalCancelAppointment
         appointment={dataCancelAppointment}
         isOpen={modalCancelAppointment}
+        handleConfirmCancel={handleConfirmCancelAppointment}
         handleClose={handleCloseModalCancelAppointment}
       />
     </Container>

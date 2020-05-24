@@ -263,6 +263,15 @@ export const UserAppointment = styled.div`
 
 export const Calendar = styled.aside`
   width: 380px;
+
+  > strong {
+    margin-bottom: 24px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 1px;
+  }
+
   .DayPicker {
     background: #232129;
     border-radius: 10px;
