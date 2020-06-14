@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import {
   getBottomSpace,
   getStatusBarHeight,
@@ -6,7 +6,7 @@ import {
 import { Platform } from 'react-native';
 
 export const Header = styled.View`
-  margin-top: ${getStatusBarHeight}px;
+  margin-top: ${getStatusBarHeight()}px;
   height: 80px;
   padding: 0 24px;
   flex-direction: row;
@@ -58,8 +58,7 @@ export const InfoPayment = styled.View`
   left: 0;
   bottom: 0;
   right: 0;
-  padding: 24px 24px;
-  ${24 + getBottomSpace()}px;
+  padding: 24px 24px ${24 + getBottomSpace()}px;
   border-top-width: 1px;
   border-color: #232129;
   background: #3e3e3e;

@@ -11,11 +11,7 @@ const providerAppointmentsController = new ProviderAppointmentsController();
 
 appointmentsRouter.use(ensureAuthenticated);
 
-// appointmentsRouter.get('/', async (request, response) => {
-//   const appointments = await appointmentsRepository.find();
-
-//   return response.json(appointments);
-// });
+appointmentsRouter.get('/my/:user_id', appointmentsController.show);
 
 appointmentsRouter.post(
   '/',

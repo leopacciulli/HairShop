@@ -21,6 +21,7 @@ interface SignUpFormData {
   nickname: string;
   email: string;
   password: string;
+  isProvider: boolean;
 }
 
 const SignUp: React.FC = () => {
@@ -41,6 +42,8 @@ const SignUp: React.FC = () => {
             .email('Digite um e-mail válido'),
           password: Yup.string().min(6, 'No mínimo 6 dígitos'),
         });
+
+        data.isProvider = true;
 
         await schema.validate(data, {
           abortEarly: false, // retorna todos os erros do input

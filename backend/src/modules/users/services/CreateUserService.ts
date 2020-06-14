@@ -11,6 +11,7 @@ interface IRequest {
   nickname: string;
   email: string;
   password: string;
+  isProvider: boolean;
 }
 
 @injectable()
@@ -31,6 +32,7 @@ class CreateUserService {
     nickname,
     email,
     password,
+    isProvider
   }: IRequest): Promise<User> {
     const checkUserExists = await this.usersRepository.findByEmail(email);
 
@@ -45,6 +47,7 @@ class CreateUserService {
       nickname,
       email,
       password: hashedPassword,
+      isProvider
     });
 
     await this.cacheProvider.invalidatePrefix('providers-list');
