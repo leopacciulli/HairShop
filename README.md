@@ -56,14 +56,6 @@ The Back-End was developed with Node.js and TypeScript. For standardization and 
 - *[NodeMailer](https://nodemailer.com/about/)*
 - *[Redis](https://redis.io/)*
 
-### ⚙️ Finished features
-- Register in the application
-- Logon in the application
-- Send email to user of the "Forgot password"
-- Notify a provider when a scheduling is done
-- Providers Features: List appointments
-- Users Features: Show profile, update profile, update an avatar to profile, forgot password, reset password, create an appointment, delete an appointment, list the availables days and months of the providers
-
 <br>
 
 ## 🖥 Front-End
@@ -77,12 +69,6 @@ The Front-End was developed with React.js and TypeScript. For standardization an
 - *[Polished](https://polished.js.org/)*
 - *[Axios](https://nodemon.io/)*
 
-### ⚙️ Finished features
-- Registration screen layout
-- Logon screen layout
-- Register in the application
-- Logon in the application
-
 <br>
 
 ## 📱 Mobile
@@ -93,12 +79,6 @@ The Mobile was developed with React Native and TypeScript. For standardization a
 - *[React Navigation](https://reactnavigation.org/)*
 - *[Styled-Components](https://styled-components.com/)*
 - *[React-Native-Vector-Icons](https://github.com/oblador/react-native-vector-icons)*
-
-### ⚙️ Finished features
-- Registration screen layout
-- Logon screen layout
-- Register in the application
-- Logon in the application
 
 <br>
 
