@@ -11,11 +11,11 @@ import { useNavigation } from '@react-navigation/native';
 import { Form } from '@unform/mobile';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
+import Icon from 'react-native-vector-icons/Feather';
+import ImagePicker from 'react-native-image-picker';
 import getValidationErrors from '../../utils/getValidationErrors';
 import api from '../../services/api';
 import { useAuth } from '../../hooks/auth';
-import Icon from 'react-native-vector-icons/Feather';
-import ImagePicker from 'react-native-image-picker';
 
 import userIcon from '../../assets/icon_user.png';
 import Input from '../../components/Input';
@@ -27,7 +27,7 @@ import {
   UserAvatarButton,
   UserAvatar,
   BackButton,
-  Camera
+  Camera,
 } from './styles';
 
 interface ProfileFormData {
@@ -36,7 +36,7 @@ interface ProfileFormData {
   email: string;
   password: string;
   old_password: string;
-  password_confirmation: string
+  password_confirmation: string;
 }
 
 const Profile: React.FC = () => {
@@ -103,11 +103,11 @@ const Profile: React.FC = () => {
 
         const response = await api.put('/profile', formData);
 
-        updateUser(response.data)
+        updateUser(response.data);
 
         Alert.alert('Perfil atualizado com sucesso!');
 
-        navigation.goBack()
+        navigation.goBack();
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
@@ -123,39 +123,41 @@ const Profile: React.FC = () => {
   );
 
   const handleUpdateAvatar = useCallback(() => {
-    ImagePicker.showImagePicker({
-      title: 'Selecione um avatar',
-      cancelButtonTitle: 'Cancelar',
-      takePhotoButtonTitle: 'Usar câmera',
-      chooseFromLibraryButtonTitle: 'Escolher da galeria'
-    }, response => {
-      if (response.didCancel) {
-        return;
-      }
+    ImagePicker.showImagePicker(
+      {
+        title: 'Selecione um avatar',
+        cancelButtonTitle: 'Cancelar',
+        takePhotoButtonTitle: 'Usar câmera',
+        chooseFromLibraryButtonTitle: 'Escolher da galeria',
+      },
+      (response) => {
+        if (response.didCancel) {
+          return;
+        }
 
-      if (response.error) {
-        Alert.alert('Erro ao atualizar a imagem do perfil.');
-        return;
-      }
+        if (response.error) {
+          Alert.alert('Erro ao atualizar a imagem do perfil.');
+          return;
+        }
 
-      const data = new FormData();
+        const data = new FormData();
 
-      data.append('avatar', {
-        type: 'image/jpeg',
-        name: `${user.id}.jpg`,
-        uri: response.uri,
-      });
+        data.append('avatar', {
+          type: 'image/jpeg',
+          name: `${user.id}.jpg`,
+          uri: response.uri,
+        });
 
-      api.patch('users/avatar', data).then(apiResponse => {
-        updateUser(apiResponse.data)
-      })
-
-    })
-  }, [updateUser, user.id])
+        api.patch('users/avatar', data).then((apiResponse) => {
+          updateUser(apiResponse.data);
+        });
+      },
+    );
+  }, [updateUser, user.id]);
 
   const handleBack = useCallback(() => {
     navigation.goBack();
-  }, [])
+  }, []);
 
   return (
     <>
@@ -170,14 +172,15 @@ const Profile: React.FC = () => {
         >
           <Container>
             <BackButton onPress={handleBack}>
-              <Icon name="chevron-left" size={24} color="#7B7B7B"/>
+              <Icon name="chevron-left" size={24} color="#7B7B7B" />
             </BackButton>
 
             <UserAvatarButton onPress={handleUpdateAvatar}>
-              {user.avatar
-                ? <UserAvatar source={{ uri: user.avatar }} />
-                : <UserAvatar source={userIcon} />
-              }
+              {user.avatar ? (
+                <UserAvatar source={{ uri: user.avatar }} />
+              ) : (
+                <UserAvatar source={userIcon} />
+              )}
               <Camera>
                 <Icon name="camera" size={18} color="#333333" />
               </Camera>
@@ -187,7 +190,15 @@ const Profile: React.FC = () => {
               <Title>Meu perfil</Title>
             </View>
 
-            <Form initialData={{ nameuser: user.name, email: user.email, nickname: user.nickname }} ref={formRef} onSubmit={handleConfirm}>
+            <Form
+              initialData={{
+                nameuser: user.name,
+                email: user.email,
+                nickname: user.nickname,
+              }}
+              ref={formRef}
+              onSubmit={handleConfirm}
+            >
               <Input
                 autoCapitalize="words"
                 name="nameuser"

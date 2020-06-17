@@ -1,40 +1,37 @@
 import { useNavigation } from '@react-navigation/native';
+import { format } from 'date-fns';
 import React, { useCallback, useEffect, useState } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
+import userIcon from '../../assets/icon_user.png';
 import Button from '../../components/Button';
 import ModalCancelAppointment from '../../components/ModalCancelAppointment';
 import { useAuth } from '../../hooks/auth';
 import api from '../../services/api';
-import { ScrollView } from 'react-native-gesture-handler';
-import { format } from 'date-fns';
-import userIcon from '../../assets/icon_user.png';
-
 import {
   Appointment,
   Container,
   Header,
   HeaderTitle,
   InfoSalon,
-  SignOut,
-  ProvidersList,
   MyAppointments,
-  ProfileButton,
-  TextAppointment,
   NoAppointment,
   NoAppointmentContainer,
+  ProfileButton,
+  ProviderAvatar,
+  ProviderContainer,
+  ProviderInfo,
+  ProviderMeta,
+  ProviderMetaText,
+  ProviderName,
+  ProvidersList,
+  ProvidersListTitle,
+  SignOut,
+  TextAppointment,
   TextInfo,
   UserAvatar,
   UserName,
-  ProvidersListTitle,
-  ProviderContainer,
-  ProviderAvatar,
-  ProviderInfo,
-  ProviderName,
-  ProviderMeta,
-  ProviderMetaText
 } from './styles';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 export interface Provider {
   id: string;
@@ -56,61 +53,70 @@ const Dashboard: React.FC = () => {
   const [isModalVisible, setModalVisible] = useState(false);
   const [providers, setProviders] = useState<Provider[]>([]);
   const [appointments, setAppointments] = useState<MyAppointments[]>([]);
-  const [appointmentToDelete, setAppointmentToDelete] = useState({} as MyAppointments)
+  const [appointmentToDelete, setAppointmentToDelete] = useState(
+    {} as MyAppointments,
+  );
 
   useEffect(() => {
     async function loadProviders() {
-      await api.get('providers').then(response => {
-        const onlyProviders = response.data.filter((prov: any) => prov.isProvider === true)
-        setProviders(onlyProviders)
-      })
+      await api.get('providers').then((response) => {
+        const onlyProviders = response.data.filter(
+          (prov: any) => prov.isProvider === true,
+        );
+        setProviders(onlyProviders);
+      });
     }
 
-    loadProviders()
-  }, [])
+    loadProviders();
+  }, []);
 
   useEffect(() => {
     async function loadMyAppointments() {
-      await api.get(`appointments/my/${user.id}`).then(response => {
-        setAppointments(response.data)
-      })
+      await api.get(`appointments/my/${user.id}`).then((response) => {
+        setAppointments(response.data);
+      });
     }
 
-    loadMyAppointments()
-  }, [])
+    loadMyAppointments();
+  }, [user.id]);
 
   const navigateToProfile = useCallback(() => {
-    navigation.navigate('Profile')
-  }, [navigation])
+    navigation.navigate('Profile');
+  }, [navigation]);
 
-  const navigateToCreateAppointment = useCallback((providerId: string) => {
-    navigation.navigate('CreateAppointment', { providerId })
-  }, [navigation])
+  const navigateToCreateAppointment = useCallback(
+    (providerId: string) => {
+      navigation.navigate('CreateAppointment', { providerId });
+    },
+    [navigation],
+  );
 
-  const handleOpenModalCancelAppointment = useCallback((appointment: MyAppointments) => {
-    setModalVisible(true);
-    setAppointmentToDelete(appointment)
-  }, []);
+  const handleOpenModalCancelAppointment = useCallback(
+    (appointment: MyAppointments) => {
+      setModalVisible(true);
+      setAppointmentToDelete(appointment);
+    },
+    [],
+  );
 
   const handleCloseModalCancelAppointment = useCallback(() => {
     setModalVisible(false);
-    setAppointmentToDelete({} as MyAppointments)
+    setAppointmentToDelete({} as MyAppointments);
   }, []);
 
   const handleConfirmCancelAppointment = useCallback(async () => {
     await api.delete(`appointments/${appointmentToDelete.id}`, {
-      data: { user_id: appointmentToDelete.user_id }
-    })
+      data: { user_id: appointmentToDelete.user_id },
+    });
 
     setAppointments(
       appointments.filter(
-        (appointment) =>
-          appointment.id !== appointmentToDelete.id,
+        (appointment) => appointment.id !== appointmentToDelete.id,
       ),
     );
 
-    setModalVisible(false)
-  }, [appointmentToDelete])
+    setModalVisible(false);
+  }, [appointmentToDelete, appointments]);
 
   return (
     <Container>
@@ -120,43 +126,59 @@ const Dashboard: React.FC = () => {
           <UserName>{user.name}</UserName>
         </HeaderTitle>
         <ProfileButton onPress={navigateToProfile}>
-          {user.avatar
-            ? <UserAvatar source={{ uri: user.avatar }} />
-            : <UserAvatar source={userIcon} />
-          }
+          {user.avatar ? (
+            <UserAvatar source={{ uri: user.avatar }} />
+          ) : (
+            <UserAvatar source={userIcon} />
+          )}
         </ProfileButton>
       </Header>
 
       <ProvidersList
         data={providers}
-        keyExtractor={provider => provider.id}
+        keyExtractor={(provider) => provider.id}
         ListHeaderComponent={
           <>
-          <MyAppointments>
-            {appointments.length > 0
-              ? <>
+            <MyAppointments>
+              {appointments.length > 0 ? (
+                <>
                   <TextAppointment>Meus agendamentos</TextAppointment>
-                  {appointments.map(appointment => (
+                  {appointments.map((appointment) => (
                     <Appointment key={appointment.id}>
                       <View>
-                        <TextInfo>{format(new Date(appointment.date), "'Dia' dd/MM/yyyy 'às' HH:mm")}</TextInfo>
+                        <TextInfo>
+                          {format(
+                            new Date(appointment.date),
+                            "'Dia' dd/MM/yyyy 'às' HH:mm",
+                          )}
+                        </TextInfo>
                         <TextInfo>com {appointment.provider_name}</TextInfo>
                       </View>
-                      <TouchableOpacity onPress={() => handleOpenModalCancelAppointment(appointment)}>
+                      <TouchableOpacity
+                        onPress={() =>
+                          handleOpenModalCancelAppointment(appointment)
+                        }
+                      >
                         <Icon name="x-circle" size={24} color="#dedede" />
                       </TouchableOpacity>
                     </Appointment>
                   ))}
                 </>
-              : <NoAppointmentContainer style={{ borderBottomWidth: 0.5, borderBottomColor: '#dedede' }}>
-                <NoAppointment>Você não possui nenhum horário agendado</NoAppointment>
-              </NoAppointmentContainer>
-            }
-          </MyAppointments>
+              ) : (
+                <NoAppointmentContainer
+                  style={{
+                    borderBottomWidth: 0.5,
+                    borderBottomColor: '#dedede',
+                  }}
+                >
+                  <NoAppointment>
+                    Você não possui nenhum horário agendado
+                  </NoAppointment>
+                </NoAppointmentContainer>
+              )}
+            </MyAppointments>
 
-          <ProvidersListTitle>
-            Cabeleireiros
-          </ProvidersListTitle>
+            <ProvidersListTitle>Cabeleireiros</ProvidersListTitle>
           </>
         }
         ListFooterComponent={
@@ -168,18 +190,19 @@ const Dashboard: React.FC = () => {
             </InfoSalon>
 
             <SignOut>
-              <Button onPress={signOut}>
-                Sair do aplicativo
-              </Button>
+              <Button onPress={signOut}>Sair do aplicativo</Button>
             </SignOut>
           </>
         }
         renderItem={({ item: provider }) => (
-          <ProviderContainer onPress={() => navigateToCreateAppointment(provider.id)}>
-            {provider.avatar
-              ? <ProviderAvatar source={{ uri: provider.avatar }} />
-              : <ProviderAvatar source={userIcon} />
-            }
+          <ProviderContainer
+            onPress={() => navigateToCreateAppointment(provider.id)}
+          >
+            {provider.avatar ? (
+              <ProviderAvatar source={{ uri: provider.avatar }} />
+            ) : (
+              <ProviderAvatar source={userIcon} />
+            )}
 
             <ProviderInfo>
               <ProviderName>{provider.name}</ProviderName>
@@ -202,6 +225,7 @@ const Dashboard: React.FC = () => {
         visible={isModalVisible}
         handleConfirm={handleConfirmCancelAppointment}
         handleNotConfirm={handleCloseModalCancelAppointment}
+        appointment={appointmentToDelete}
       />
     </Container>
   );
