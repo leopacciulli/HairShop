@@ -81,6 +81,7 @@ const CreateAppointment: React.FC = () => {
 
   const [availability, setAvailability] = useState<AvailabilityItem[]>([]);
   const [showDatePicker, setShowDatePicker] = useState(false);
+  const [currentMonth, setCurrentMonth] = useState(0);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedHour, setSelectedHour] = useState(0);
   const [providers, setProviders] = useState<Provider[]>([]);
@@ -97,7 +98,7 @@ const CreateAppointment: React.FC = () => {
         setProviders(onlyProviders);
       });
     }
-
+    setCurrentMonth(new Date().getMonth() + 1);
     loadProviders();
   }, []);
 
@@ -286,7 +287,9 @@ const CreateAppointment: React.FC = () => {
             renderArrow={(direction) => (
               <Icon name={`chevron-${direction}`} size={20} color="#dedede" />
             )}
-            disableArrowLeft={selectedDate.getMonth() === new Date().getMonth()}
+            // disableArrowLeft={
+            //   Number(new Date().getMonth() + 1) === currentMonth
+            // }
             onPressArrowLeft={(substractMonth) => substractMonth()}
             onPressArrowRight={(addMonth) => addMonth()}
             style={{

@@ -1,39 +1,36 @@
 import { useNavigation } from '@react-navigation/native';
+import { format } from 'date-fns';
 import React, { useCallback, useEffect, useState } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
-import { ScrollView } from 'react-native-gesture-handler';
-import { format } from 'date-fns';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import userIcon from '../../assets/icon_user.png';
 import Button from '../../components/Button';
 import ModalCancelAppointment from '../../components/ModalCancelAppointment';
 import { useAuth } from '../../hooks/auth';
 import api from '../../services/api';
-import userIcon from '../../assets/icon_user.png';
-
 import {
   Appointment,
   Container,
   Header,
   HeaderTitle,
   InfoSalon,
-  SignOut,
-  ProvidersList,
   MyAppointments,
-  ProfileButton,
-  TextAppointment,
   NoAppointment,
   NoAppointmentContainer,
+  ProfileButton,
+  ProviderAvatar,
+  ProviderContainer,
+  ProviderInfo,
+  ProviderMeta,
+  ProviderMetaText,
+  ProviderName,
+  ProvidersList,
+  ProvidersListTitle,
+  SignOut,
+  TextAppointment,
   TextInfo,
   UserAvatar,
   UserName,
-  ProvidersListTitle,
-  ProviderContainer,
-  ProviderAvatar,
-  ProviderInfo,
-  ProviderName,
-  ProviderMeta,
-  ProviderMetaText,
 } from './styles';
 
 export interface Provider {
@@ -228,6 +225,7 @@ const Dashboard: React.FC = () => {
         visible={isModalVisible}
         handleConfirm={handleConfirmCancelAppointment}
         handleNotConfirm={handleCloseModalCancelAppointment}
+        appointment={appointmentToDelete}
       />
     </Container>
   );

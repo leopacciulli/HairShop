@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-native-modal';
+import moment from 'moment';
 
 import {
   ContainerModal,
@@ -13,17 +14,27 @@ import {
   TouchableNo,
 } from './styles';
 
+interface Appointment {
+  date: string;
+  provider_name: string;
+}
+
 interface Props {
   visible: boolean;
   handleConfirm: () => void;
   handleNotConfirm: () => void;
+  appointment: Appointment;
 }
 
 const ModalCancelAppointment: React.FC<Props> = ({
   visible,
   handleConfirm,
   handleNotConfirm,
+  appointment,
 }) => {
+  const date = moment(appointment.date).format('DD/MM/yyyy');
+  const hour = moment(appointment.date).format('HH:mm');
+
   return (
     <Modal isVisible={visible} backdropColor="#2f2f2f" backdropOpacity={0.7}>
       <ContainerModal>
@@ -31,8 +42,10 @@ const ModalCancelAppointment: React.FC<Props> = ({
           <TitleModal>Cancelamento</TitleModal>
 
           <DescriptionModal>Deseja cancelar o agendamento</DescriptionModal>
-          <DescriptionModal>do dia 20/02/2020 às 16:00</DescriptionModal>
-          <DescriptionModal>com Jonas Ferreira?</DescriptionModal>
+          <DescriptionModal>
+            do dia {date} às {hour}
+          </DescriptionModal>
+          <DescriptionModal>com {appointment.provider_name}?</DescriptionModal>
 
           <ButtonsModal>
             <TouchableYes onPress={handleConfirm}>

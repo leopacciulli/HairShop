@@ -56,18 +56,13 @@ const SignIn: React.FC = () => {
         await schema.validate(data, {
           abortEarly: false, // retorna todos os erros do input
         });
-
         await signIn({ email: data.mail, password: data.password });
       } catch (err) {
+        console.log(err);
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
           formRef.current?.setErrors(errors);
         }
-
-        // Alert.alert(
-        //   'Erro na autenticação',
-        //   'Ocorreu um erro ao fazer login, cheque as credenciais.',
-        // );
       }
     },
     [signIn],
@@ -126,9 +121,9 @@ const SignIn: React.FC = () => {
               </Button>
             </Form>
 
-            <ForgotPassword onPress={() => navigation.navigate('SignUp')}>
+            {/* <ForgotPassword onPress={() => navigation.navigate('SignUp')}>
               <PasswordText>Esqueci minha senha</PasswordText>
-            </ForgotPassword>
+            </ForgotPassword> */}
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>
