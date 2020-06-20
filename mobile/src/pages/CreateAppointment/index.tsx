@@ -1,9 +1,10 @@
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { format, isBefore } from 'date-fns';
+import { format } from 'date-fns';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Alert } from 'react-native';
+import { Alert, View, ActivityIndicator } from 'react-native';
 import { Calendar, LocaleConfig } from 'react-native-calendars';
 import Icon from 'react-native-vector-icons/Feather';
+import moment from 'moment';
 import userIcon from '../../assets/icon_user.png';
 import { useAuth } from '../../hooks/auth';
 import api from '../../services/api';
@@ -79,9 +80,9 @@ const CreateAppointment: React.FC = () => {
   const { goBack, navigate } = useNavigation();
   const routeParams = route.params as RouteParams;
 
+  const [loading, setLoading] = useState(false);
+  const [markedDates, setMarkedDates] = useState({});
   const [availability, setAvailability] = useState<AvailabilityItem[]>([]);
-  const [showDatePicker, setShowDatePicker] = useState(false);
-  const [currentMonth, setCurrentMonth] = useState(0);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedHour, setSelectedHour] = useState(0);
   const [providers, setProviders] = useState<Provider[]>([]);
@@ -89,16 +90,19 @@ const CreateAppointment: React.FC = () => {
     routeParams.providerId,
   );
 
+  const DISABLED_DAYS = ['Sunday', 'Monday'];
+
   useEffect(() => {
+    setLoading(true);
     async function loadProviders() {
       await api.get('providers').then((response) => {
         const onlyProviders = response.data.filter(
           (prov: any) => prov.isProvider === true,
         );
         setProviders(onlyProviders);
+        setLoading(false);
       });
     }
-    setCurrentMonth(new Date().getMonth() + 1);
     loadProviders();
   }, []);
 
@@ -116,21 +120,60 @@ const CreateAppointment: React.FC = () => {
       });
   }, [selectedDate, selectedProvider]);
 
+  useEffect(() => {
+    async function getDaysInMonth(
+      month: number,
+      year: number,
+      days: Array<string>,
+    ) {
+      const pivot = moment().month(month).year(year).startOf('month');
+      const end = moment().month(month).year(year).endOf('month');
+
+      const dates = {};
+      const disabled = { disableTouchEvent: true };
+      while (pivot.isBefore(end)) {
+        days.forEach((day: string) => {
+          dates[pivot.day(day).format('YYYY-MM-DD')] = disabled;
+        });
+        pivot.add(7, 'days');
+      }
+
+      setMarkedDates(dates);
+    }
+
+    getDaysInMonth(moment().month(), moment().year(), DISABLED_DAYS);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const disabledDays = (month: number, year: number, days: Array<string>) => {
+    const pivot = moment().month(month).year(year).startOf('month');
+    const end = moment().month(month).year(year).endOf('month');
+
+    const dates = {};
+    const disabled = { disableTouchEvent: true };
+    while (pivot.isBefore(end)) {
+      days.forEach((day: string) => {
+        dates[pivot.day(day).format('YYYY-MM-DD')] = disabled;
+      });
+      pivot.add(7, 'days');
+    }
+
+    setMarkedDates(dates);
+  };
+
   const navigateBack = useCallback(() => {
     goBack();
   }, [goBack]);
 
   const handleSelectProvider = useCallback((providerId: string) => {
+    setSelectedHour(0);
     setSelectedProvider(providerId);
-  }, []);
-
-  const handleToggleDatePicker = useCallback(() => {
-    setShowDatePicker((state) => !state);
   }, []);
 
   const handleDateChanged = useCallback(
     (event: any, date: Date | undefined) => {
       if (date) {
+        setSelectedHour(0);
         date.setDate(date.getDate() + 1);
         setSelectedDate(date);
       }
@@ -141,6 +184,7 @@ const CreateAppointment: React.FC = () => {
   const handleMonthChanged = useCallback(
     (event: any, date: Date | undefined) => {
       if (date) {
+        disabledDays(date.getMonth(), date.getFullYear(), DISABLED_DAYS);
         if (new Date().getMonth() === date.getMonth()) {
           setSelectedDate(new Date());
         } else {
@@ -148,6 +192,7 @@ const CreateAppointment: React.FC = () => {
         }
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   );
 
@@ -180,7 +225,16 @@ const CreateAppointment: React.FC = () => {
   }, []);
 
   const handleCreateAppointment = useCallback(async () => {
+    if (selectedHour === 0) {
+      Alert.alert(
+        'Selecionar horário',
+        'Escolha o horário do seu agendamento para finalizar',
+      );
+      return;
+    }
+
     try {
+      setLoading(true);
       const date = new Date(selectedDate);
 
       date.setHours(selectedHour);
@@ -191,6 +245,7 @@ const CreateAppointment: React.FC = () => {
         date,
       });
 
+      setLoading(false);
       navigate('AppointmentCreated', { date: date.getTime() });
     } catch (err) {
       Alert.alert(
@@ -210,28 +265,20 @@ const CreateAppointment: React.FC = () => {
       : selectedDate.getDate()
   }`;
 
-  const nextDays = [];
-
-  for (let i = 1; i < 31; i++) {
-    const day = i < 10 ? `0${i}` : i;
-    const month = new Date().getMonth() + 1;
-    const year = new Date().getFullYear();
-    const mountMonth = month < 10 ? `0${month}` : month;
-
-    const getDate = `${year}-${mountMonth}-${day}`;
-    if (isBefore(new Date(getDate), new Date())) {
-      nextDays.push(getDate);
-    }
-  }
-
-  const newDaysObject = {};
-  nextDays.forEach((day) => {
-    newDaysObject[day] = {
-      disableTouchEvent: true,
-    };
-  });
-
   LocaleConfig.defaultLocale = 'pr-BR';
+
+  if (loading) {
+    return (
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+        }}
+      >
+        <ActivityIndicator size="large" color="#dedede" />
+      </View>
+    );
+  }
 
   return (
     <Container>
@@ -287,9 +334,6 @@ const CreateAppointment: React.FC = () => {
             renderArrow={(direction) => (
               <Icon name={`chevron-${direction}`} size={20} color="#dedede" />
             )}
-            // disableArrowLeft={
-            //   Number(new Date().getMonth() + 1) === currentMonth
-            // }
             onPressArrowLeft={(substractMonth) => substractMonth()}
             onPressArrowRight={(addMonth) => addMonth()}
             style={{
@@ -297,7 +341,7 @@ const CreateAppointment: React.FC = () => {
               borderRadius: 8,
             }}
             markedDates={{
-              ...newDaysObject,
+              ...markedDates,
               [dayCalendarSelected]: { selected: true },
             }}
             theme={{
@@ -316,20 +360,6 @@ const CreateAppointment: React.FC = () => {
               textMonthFontSize: 18,
             }}
           />
-
-          {/* <OpenDatePickerButton onPress={handleToggleDatePicker}>
-            <OpenDatePickerButtonText>Selecionar data</OpenDatePickerButtonText>
-          </OpenDatePickerButton>
-
-          {showDatePicker && (
-            <DateTimePicker
-              mode="date"
-              display="calendar"
-              textColor="#f4ede8"
-              value={selectedDate}
-              onChange={handleDateChanged}
-            />
-          )} */}
         </CalendarContainer>
 
         <Schedule>

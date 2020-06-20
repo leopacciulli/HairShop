@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import { format } from 'date-fns';
 import React, { useCallback, useEffect, useState } from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View, ActivityIndicator } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import userIcon from '../../assets/icon_user.png';
 import Button from '../../components/Button';
@@ -50,6 +50,8 @@ interface MyAppointments {
 const Dashboard: React.FC = () => {
   const { user, signOut } = useAuth();
   const navigation = useNavigation();
+
+  const [loading, setLoading] = useState(false);
   const [isModalVisible, setModalVisible] = useState(false);
   const [providers, setProviders] = useState<Provider[]>([]);
   const [appointments, setAppointments] = useState<MyAppointments[]>([]);
@@ -58,12 +60,16 @@ const Dashboard: React.FC = () => {
   );
 
   useEffect(() => {
+    setLoading(true);
     async function loadProviders() {
       await api.get('providers').then((response) => {
         const onlyProviders = response.data.filter(
           (prov: any) => prov.isProvider === true,
         );
         setProviders(onlyProviders);
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
       });
     }
 
@@ -117,6 +123,19 @@ const Dashboard: React.FC = () => {
 
     setModalVisible(false);
   }, [appointmentToDelete, appointments]);
+
+  if (loading) {
+    return (
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+        }}
+      >
+        <ActivityIndicator size="large" color="#dedede" />
+      </View>
+    );
+  }
 
   return (
     <Container>

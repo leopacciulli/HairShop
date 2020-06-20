@@ -35,7 +35,9 @@ export const Header = styled.View`
   align-items: center;
 `;
 
-export const Content = styled.ScrollView``;
+export const Content = styled.ScrollView.attrs({
+  showsVerticalScrollIndicator: false,
+})``;
 
 export const HeaderTitle = styled.Text`
   color: #f4ede8;
