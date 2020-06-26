@@ -1,0 +1,31 @@
+[
+  {
+    "name": "default",
+    "type": "postgres",
+    "host": "localhost",
+    "post": 5432,
+    "username": "postgres",
+    "password": "docker",
+    "database": "gostack_gobarber",
+    "entities": [
+      "./dist/modules/**/infra/typeorm/entities/*.ts"
+    ],
+    "migrations": [
+      "./dist/shared/infra/typeorm/migrations/*.ts"
+    ],
+    "cli": {
+      "migrationsDir": "./dist/shared/infra/typeorm/migrations"
+    }
+  },
+  {
+    "name": "mongo",
+    "type": "mongodb",
+    "host": "localhost",
+    "post": 27917,
+    "database": "gobarber",
+    "useUnifiedTopology": true,
+    "entities": [
+      "./dist/modules/**/infra/typeorm/schemas/*.ts"
+    ]
+  }
+]
