@@ -2,11 +2,6 @@
   <img src="./frontend/src/assets/logo.svg" width="250px">
 </h1>
 
-<h3 align="center">
-🚧 In Development 🚧 <br>
-Project being built along with Rocketseat's GoStack - <a href="https://rocketseat.com.br/">RocketSeat</a>
-</h3>
-
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/leopacciulli/HairShop?color=yellow">
   
