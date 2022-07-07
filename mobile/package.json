@@ -21,7 +21,7 @@
     "@unform/mobile": "^2.1.0",
     "axios": "^0.19.2",
     "date-fns": "^2.14.0",
-    "moment": "^2.26.0",
+    "moment": "^2.29.4",
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-calendars": "^1.296.0",
